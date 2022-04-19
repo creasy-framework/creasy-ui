@@ -1,0 +1,18 @@
+version: 2
+jobs:
+  test_and_build:
+    docker:
+      - image: cimg/node:16.14.2
+    steps:
+      - checkout
+      - run:
+          command: yarn install
+      - run:
+          command: yarn test
+      - run:
+          command: yarn build
+workflows:
+  version: 2
+  test_and_build:
+    jobs:
+      - test_and_build

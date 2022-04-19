@@ -1,0 +1,21 @@
+import { Meta } from '@storybook/addon-docs';
+import { ArgsTable } from '@storybook/addon-docs';
+import { Playground } from 'storybook-addon-jarle-monaco';
+import { Button } from '../../src';
+
+<Meta title="Components/Form/Button" />
+
+> Use `Playground` in *.stories.mdx file, it provides live preview and editor
+
+### Button
+
+<Playground
+  code="<Button primary label={'hello'} />"
+  providerProps={{
+    scope: {
+      Button,
+    },
+  }}
+/>
+
+<ArgsTable of={Button} />

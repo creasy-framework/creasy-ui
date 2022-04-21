@@ -9,7 +9,7 @@ module.exports = {
     "@storybook/addon-interactions",
     '@storybook/preset-scss',
     '@storybook/addon-docs',
-    'storybook-addon-jarle-monaco'
+    'storybook-addon-live-examples'
   ],
   "framework": "@storybook/react"
 }

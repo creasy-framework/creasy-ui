@@ -1,0 +1,62 @@
+/* breakpoints */
+:root {
+  --creasy-screen-xs: 480px;
+  --creasy-screen-sm: 768px;
+  --creasy-screen-md: 992px;
+  --creasy-screen-lg: 1200px;
+}
+
+/* palette */
+:root {
+  --creasy-palette-storm-10: #F1F1F1;
+  --creasy-palette-storm-11: #E8EAEC;
+  --creasy-palette-storm-17: #DCDFE1;
+  --creasy-palette-storm-28: #C5C9CE;
+  --creasy-palette-storm-50: #969EA7;
+  --creasy-palette-storm-72: #687480;
+  --creasy-palette-storm-83: #515E6D;
+  --creasy-palette-storm-100: #2E3E4F;
+  --creasy-palette-storm-06: #F3F4F5;
+  --creasy-palette-thunder: #1B2830;
+  --creasy-palette-dusk-50: #f5f0f9;
+  --creasy-palette-dusk-60: #f5f0f9;
+  --creasy-palette-dusk-70: #A476C1;
+  --creasy-palette-dusk-72: #D1C4E9;
+  --creasy-palette-dusk-80: #8F69E8;
+  --creasy-palette-dusk-90: #865FDF;
+  --creasy-palette-dusk-100: #8241AA;
+  --creasy-palette-dusk-110: #3f51b5;
+  --creasy-palette-dusk-120: #9F2AD0;
+  --creasy-palette-dusk-130: #7B1FA2;
+  --creasy-palette-dusk-05: #F9F5FB;
+  --creasy-palette-dusk-dark: #582c73;
+  --creasy-palette-dusk-darker: #201029;
+  --creasy-palette-azure: #2B74DF;
+  --creasy-palette-azure-light: #98BAEC;
+  --creasy-palette-berry: #CE2554;
+  --creasy-palette-berry-light: #E796AC;
+  --creasy-palette-berry-dark: #900449;
+  --creasy-palette-golf: #00AA65;
+  --creasy-palette-golf-light: #66D7A9;
+  --creasy-palette-golf-darker: #007043;
+  --creasy-palette-pineapple: #E6C543;
+  --creasy-palette-pineapple-light: #EBD068;
+  --creasy-palette-crown: #806D25;
+  --creasy-palette-white: #ffffff;
+  --creasy-palette-color-text: #1B2830;
+  --creasy-palette-color-text-darker: #2E3E4F;
+  --creasy-palette-color-text-link: #8241AA;
+}
+
+/* sizes */
+:root {
+  --creasy-field-size-xs: 10.6rem;
+  --creasy-field-size-s: 16.8rem;
+  --creasy-field-size-m: 22.9rem;
+  --creasy-field-size-l: 29rem;
+  --creasy-field-size-xl: 35.2rem;
+  --creasy-icons-size-xs: 1rem;
+  --creasy-icons-size-s: 1.5rem;
+  --creasy-icons-size-m: 2rem;
+  --creasy-icons-size-l: 3rem;
+}

@@ -1,0 +1,19 @@
+{
+  "name": "@creasy/creasy-styles",
+  "version": "0.1.0",
+  "main": "dist/index.css",
+  "private": true,
+  "dependencies": {
+    "@types/classnames": "^2.2.10",
+    "@types/enzyme": "^3.10.5",
+    "classnames": "^2.2.6",
+    "enzyme": "^3.11.0",
+    "enzyme-to-json": "^3.4.4"
+  },
+  "scripts": {
+    "build": "node-sass src/index.scss dist/index.css"
+  },
+  "devDependencies": {
+    "node-sass": "^7.0.1"
+  }
+}

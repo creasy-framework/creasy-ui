@@ -1,0 +1,55 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Toggle should render toggle when checked 1`] = `
+<FieldGroup
+  isRequired={false}
+  labelPlacement="left"
+>
+  <Toggle
+    checked={true}
+    className="creasy-toggle"
+    disabled={false}
+    icons={
+      Object {
+        "unchecked": null,
+      }
+    }
+  />
+</FieldGroup>
+`;
+
+exports[`Toggle should render toggle when disabled 1`] = `
+<FieldGroup
+  isRequired={false}
+  labelPlacement="left"
+>
+  <Toggle
+    checked={true}
+    className="creasy-toggle"
+    disabled={true}
+    icons={
+      Object {
+        "unchecked": null,
+      }
+    }
+  />
+</FieldGroup>
+`;
+
+exports[`Toggle should render toggle when unchecked 1`] = `
+<FieldGroup
+  isRequired={false}
+  labelPlacement="left"
+>
+  <Toggle
+    checked={false}
+    className="creasy-toggle"
+    disabled={false}
+    icons={
+      Object {
+        "unchecked": null,
+      }
+    }
+  />
+</FieldGroup>
+`;

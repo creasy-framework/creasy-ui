@@ -1,0 +1,393 @@
+.creasy-button {
+  -ms-appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  box-sizing: border-box;
+  outline: none;
+  font-weight: 500;
+  font-size: 11px;
+  line-height: 1.75;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  border: 0;
+  border-radius: 4px;
+  cursor: pointer;
+  padding: 6px 16px;
+  margin: 4px;
+  background-color: var(--creasy-palette-storm-28);
+  width: 100%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  &--reversed {
+    flex-direction: row-reverse;
+  }
+
+  &:hover{
+    background-color: var(--creasy-palette-storm-50);
+    color: white;
+    svg {
+      fill: white;
+    }
+  }
+
+  &:active{
+    background-color: var(--creasy-palette-storm-72);
+    color: white;
+    svg {
+      fill: white;
+    }
+  }
+
+  @media (min-width: 768px) {
+    min-width: 64px;
+    width: auto;
+
+    &--size-xs {
+      width: 3rem;
+    }
+
+    &--size-s {
+      width: 5rem;
+    }
+
+    &--size-m {
+      width: 7rem;
+    }
+
+    &--size-l {
+      width: 10rem;
+    }
+
+    &--size-xl {
+      width: 13rem;
+    }
+  }
+
+  &--color-primary {
+    color: white;
+    background-color: var(--creasy-palette-dusk-130);
+    svg {
+      fill: white;
+    }
+
+    &.creasy-button--outlined {
+      border-color: var(--creasy-palette-dusk-130);
+      color: var(--creasy-palette-dusk-130);
+      svg {
+        fill: var(--creasy-palette-dusk-130);
+      }
+      &:hover{
+        background-color: var(--creasy-palette-dusk-50);
+        color: var(--creasy-palette-dusk-130);
+        svg {
+          fill: var(--creasy-palette-dusk-130);
+        }
+      }
+      &:active {
+        background-color: var(--creasy-palette-dusk-60);
+        color: var(--creasy-palette-dusk-130);
+        svg {
+          fill: var(--creasy-palette-dusk-130);
+        }
+      }
+    }
+
+    &.creasy-button--text {
+      color: var(--creasy-palette-dusk-130);
+      svg {
+        fill: var(--creasy-palette-dusk-130);
+      }
+      &:hover{
+        background-color: var(--creasy-palette-dusk-50);
+        color: var(--creasy-palette-dusk-130);
+        svg {
+          fill: var(--creasy-palette-dusk-130);
+        }
+      }
+      &:active {
+        background-color: var(--creasy-palette-dusk-60);
+        color: var(--creasy-palette-dusk-130);
+        svg {
+          fill: var(--creasy-palette-dusk-130);
+        }
+      }
+    }
+
+    &.creasy-button--link {
+      color: var(--creasy-palette-dusk-130);
+      svg {
+        fill: var(--creasy-palette-dusk-130);
+      }
+    }
+
+    &:hover{
+      background-color: var(--creasy-palette-dusk-70);
+      color: white;
+      svg {
+        fill: white;
+      }
+    }
+
+    &:active{
+      background-color: var(--creasy-palette-dusk-100);
+      color: white;
+      svg {
+        fill: white;
+      }
+    }
+  }
+
+  &--color-secondary {
+    color: white;
+    background-color: var(--creasy-palette-golf);
+    svg {
+      fill: white;
+    }
+
+    &.creasy-button--outlined {
+      border-color: var(--creasy-palette-golf);
+      color: var(--creasy-palette-golf);
+      svg {
+        fill: var(--creasy-palette-golf);
+      }
+      &:hover{
+        background-color: var(--creasy-palette-golf-light);
+        color: white;
+        svg {
+          fill: white;
+        }
+      }
+      &:active {
+        background-color: var(--creasy-palette-golf);
+        color: white;
+        svg {
+          fill: white;
+        }
+      }
+    }
+
+    &.creasy-button--text {
+      color: var(--creasy-palette-golf);
+      svg {
+        fill: var(--creasy-palette-golf);
+      }
+      &:hover{
+        background-color: var(--creasy-palette-golf-light);
+        color: white;
+        svg {
+          fill: white;
+        }
+      }
+      &:active {
+        background-color: var(--creasy-palette-golf-darker);
+        color: white;
+        svg {
+          fill: white;
+        }
+      }
+    }
+
+    &.creasy-button--link {
+      color: var(--creasy-palette-golf);
+      svg {
+        fill: var(--creasy-palette-golf);
+      }
+      &:hover {
+        color: var(--creasy-palette-golf-darker);
+        svg {
+          fill: var(--creasy-palette-golf-darker);
+        }
+      }
+    }
+
+    &:hover{
+      background-color: var(--creasy-palette-golf-light);
+      color: white;
+      svg {
+        fill: white;
+      }
+    }
+
+    &:active{
+      background-color: var(--creasy-palette-golf-darker);
+      color: white;
+      svg {
+        fill: white;
+      }
+    }
+  }
+
+  &--color-danger {
+    color: white;
+    background-color: var(--creasy-palette-berry);
+    svg {
+      fill: white;
+    }
+
+    &.creasy-button--outlined {
+      border-color: var(--creasy-palette-berry);
+      color: var(--creasy-palette-berry);
+      svg {
+        fill: var(--creasy-palette-berry);
+      }
+      &:hover{
+        background-color: var(--creasy-palette-berry-light);
+        color: white;
+        svg {
+          fill: white;
+        }
+      }
+      &:active {
+        background-color: var(--creasy-palette-berry);
+        color: white;
+        svg {
+          fill: white;
+        }
+      }
+    }
+
+    &.creasy-button--text {
+      color: var(--creasy-palette-berry);
+      svg {
+        fill: var(--creasy-palette-berry);
+      }
+      &:hover{
+        background-color: var(--creasy-palette-berry-light);
+        color: white;
+        svg {
+          fill: white;
+        }
+      }
+      &:active {
+        background-color: var(--creasy-palette-berry-light);
+        color: white;
+        svg {
+          fill: white;
+        }
+      }
+    }
+
+    &.creasy-button--link {
+      color: var(--creasy-palette-berry);
+      svg {
+        fill: var(--creasy-palette-berry);
+      }
+      &:hover {
+        color: var(--creasy-palette-berry-dark);
+        svg {
+          fill: var(--creasy-palette-berry-dark);
+        }
+      }
+    }
+
+    &:hover{
+      background-color: var(--creasy-palette-berry-light);
+      color: white;
+      svg {
+        fill: white;
+      }
+    }
+
+    &:active{
+      background-color: var(--creasy-palette-berry);
+      color: white;
+      svg {
+        fill: white;
+      }
+    }
+  }
+
+  &--shadow {
+    box-shadow: 0px 3px 1px -2px rgba(0,0,0,0.2), 0px 2px 2px 0px rgba(0,0,0,0.14), 0px 1px 5px 0px rgba(0,0,0,0.12);
+  }
+
+  &--outlined {
+    background-color: transparent;
+    border: 1px solid var(--creasy-palette-storm-28);
+
+    &:hover{
+      background-color: var(--creasy-palette-storm-11);
+      color: inherit;
+    }
+    &:active {
+      background-color: var(--creasy-palette-storm-17);
+      color: inherit;
+    }
+  }
+
+  &--text {
+    background-color: transparent;
+    border: 0;
+
+    &:hover{
+      background-color: var(--creasy-palette-storm-11);
+      color: inherit;
+    }
+    &:active {
+      background-color: var(--creasy-palette-storm-17);
+      color: inherit;
+    }
+  }
+
+  &--link {
+    background-color: transparent;
+    text-decoration: underline;
+    width: auto;
+    &:hover{
+      background-color: transparent;
+      color: var(--creasy-palette-color-text-link);
+      svg {
+        fill: var(--creasy-palette-color-text-link);
+      }
+    }
+    &:active {
+      background-color: transparent;
+      color: var(--creasy-palette-color-text-link);
+      svg {
+        fill: var(--creasy-palette-color-text-link);
+      }
+    }
+  }
+
+  &--disabled {
+    background-color: var(--creasy-palette-storm-11);
+    border-color: var(--creasy-palette-storm-11);
+    color: var(--creasy-palette-storm-50);
+    svg {
+      fill: var(--creasy-palette-storm-50);
+    }
+
+    &:hover {
+      background-color: var(--creasy-palette-storm-11);
+      color: var(--creasy-palette-storm-50);
+      svg {
+        fill: var(--creasy-palette-storm-50);
+      }
+    }
+    &:active {
+      background-color: var(--creasy-palette-storm-11);
+      color: var(--creasy-palette-storm-50);
+      svg {
+        fill: var(--creasy-palette-storm-50);
+      }
+    }
+
+    &.creasy-button--link, &.creasy-button--outlined, &.creasy-button--text {
+      background-color: transparent;
+    }
+  }
+
+  &__icon {
+    display: inline-flex;
+
+    &--left {
+      padding-right: 5px;
+    }
+
+    &--right {
+      padding-left: 5px;
+    }
+  }
+}

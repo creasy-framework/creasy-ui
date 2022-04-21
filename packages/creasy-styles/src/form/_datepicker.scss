@@ -1,0 +1,20 @@
+.creasy-datepicker {
+  .DayPicker {
+    z-index: 9;
+    background-color: white;
+    position: absolute;
+    border: 1px solid var(--creasy-palette-storm-28);
+    border-radius: 4px;
+  }
+  .DayPicker-Day--highlighted {
+    background-color: var(--creasy-palette-dusk-100);
+    color: white;
+    &:hover {
+      background-color: var(creasy--palette-dusk-120) !important;
+    }
+  }
+  width: 12rem;
+  &__icon {
+    cursor: pointer;
+  }
+}

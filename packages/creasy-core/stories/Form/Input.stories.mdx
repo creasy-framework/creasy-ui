@@ -1,0 +1,67 @@
+import { Meta } from '@storybook/addon-docs';
+import { ArgsTable } from '@storybook/addon-docs';
+import { Input, Icons, Button } from '../../src';
+
+<Meta title="Components/Form/Input" />
+
+### Inputs
+
+```tsx live
+render(() => {
+  const [value1, setValue1] = React.useState<string>('');
+  const [value2, setValue2] = React.useState<string>('');
+  return (
+    <>
+      <Input label="Outlined" value={value1} onChange={(e) => setValue1(e.target.value)}/>
+      <Input type="underlined" label="Underlined" value={value2} onChange={(e) => setValue2(e.target.value)}/>
+    </>
+  );
+})
+```
+
+### Label placement
+
+```tsx live
+<Input label="Label" labelPlacement="top"/>
+```
+
+### Left & right parts
+
+```tsx live
+<Input left={<Icons.Form/>} right={<Button color="danger">Clear</Button>}/>
+```
+
+### Sizes
+
+```tsx live
+<>
+  <Input size="xs" value="xs"/>
+  <Input size="s" value="s"/>
+  <Input size="m" value="m"/>
+  <Input size="l" value="l"/>
+  <Input size="xl" value="xl"/>
+</>
+```
+
+### Disabled & readonly
+
+```tsx live
+<>
+  <Input disabled value="disabled"/>
+  <Input readOnly value="readonly"/>
+</>
+```
+
+### Required
+
+```tsx live
+<Input isRequired label="ID #"/>
+```
+
+### Customized label accessory
+
+```tsx live
+<Input labelAccessory={<Icons.QuestionMark color="primary"/>} label="Home address"/>
+```
+
+<ArgsTable of={Input} />

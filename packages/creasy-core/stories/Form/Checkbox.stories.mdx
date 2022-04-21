@@ -1,0 +1,38 @@
+import { Meta } from '@storybook/addon-docs';
+import { ArgsTable } from '@storybook/addon-docs';
+import { Checkbox } from '../../src';
+
+<Meta title="Components/Form/Checkbox" />
+
+### Checkbox with two states
+
+```tsx live
+render(() => {
+  const [checkState, setCheckState] = React.useState('unchecked');
+  return (
+    <Checkbox
+      value={checkState}
+      label={checkState}
+      onChange={state => setCheckState(state)}
+    />
+  );
+})
+```
+
+### Checkbox with three states
+
+```tsx live
+render(() => {
+  const [checkState, setCheckState] = React.useState('unchecked');
+  return (
+    <Checkbox
+      enableIntermediateState
+      value={checkState}
+      label={checkState}
+      onChange={state => setCheckState(state)}
+    />
+  );
+})
+```
+
+<ArgsTable of={Checkbox} />

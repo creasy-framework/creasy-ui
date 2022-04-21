@@ -4,7 +4,11 @@
     "module": "esnext",
     "lib": [
       "dom",
-      "esnext"
+      "esnext",
+      "es5",
+      "es6",
+      "es7",
+      "es2017"
     ],
     "moduleResolution": "node",
     "jsx": "react",
@@ -29,7 +33,7 @@
     "noEmit": true
   },
   "include": [
-    "src/__tests__"
+    "src/**/__tests__"
   ],
   "exclude": [
     "node_modules",

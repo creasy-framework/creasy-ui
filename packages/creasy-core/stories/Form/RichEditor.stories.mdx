@@ -1,0 +1,59 @@
+import { Meta } from '@storybook/addon-docs';
+import { ArgsTable } from '@storybook/addon-docs';
+import { RichEditor } from '../../src';
+
+<Meta title="Components/Form/Rich Editor" />
+
+### Text area
+
+> You can use rich text editor as a simple text area
+
+```tsx live
+<RichEditor showToolbar={false} label="Description" size="l" />
+```
+
+### Rich text editor
+
+> You can customise content styles by selecting text
+
+```tsx live
+<div style={{height: 100, display: 'flex', alignItems: 'center'}}>
+    <RichEditor label="Description" size="l" contentHtml="Select me to show toolbar"/>
+</div>
+```
+
+### Rich text editor
+
+> You can mention someone by typing '@'
+
+```tsx live
+render(() => {
+    const mentions = [
+      {
+        id: '1',
+        name: 'Matthew Russell',
+      },
+      {
+        id: '2',
+        name: 'Julian Krispel-Samsel',
+      },
+      {
+        id: '3',
+        name: 'Jyoti Puri',
+      },
+    ];
+    return (
+        <div style={{height: 150}}>
+            <RichEditor
+              showToolbar={false}
+              mentions={mentions}
+              label="Description"
+              size="l"
+              contentHtml=""
+            />
+        </div>
+    )
+})
+```
+
+<ArgsTable of={RichEditor} />

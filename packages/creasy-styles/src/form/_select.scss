@@ -1,0 +1,33 @@
+.creasy-select {
+  .creasy-select__control--is-focused {
+    border-color: var(--creasy-palette-dusk-70);
+    box-shadow: 0 0 0 1px var(--creasy-palette-dusk-70);
+  }
+
+  .creasy-select__control--is-focused:hover  {
+    border-color: var(--creasy-palette-dusk-70);
+    box-shadow: 0 0 0 1px var(--creasy-palette-dusk-70);
+  }
+
+  .creasy-select__multi-value {
+    background-color: var(--creasy-palette-dusk-100);
+    color: white;
+  }
+
+  .creasy-select__multi-value__label {
+    color: white;
+  }
+
+  .creasy-select__multi-value__remove:hover {
+    background-color: var(--creasy-palette-dusk-70);
+    color: white;
+  }
+
+  .creasy-select__option--is-focused {
+    background-color: var(--creasy-palette-dusk-50);
+  }
+
+  .creasy-select__option--is-selected {
+    background-color: var(--creasy-palette-dusk-70);
+  }
+}

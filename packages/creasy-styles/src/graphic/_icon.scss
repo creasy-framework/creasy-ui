@@ -1,0 +1,36 @@
+.creasy-icon {
+  fill: var(--creasy-palette-storm-72);
+  width: var(--creasy-icons-size-xs);
+  height: var(--creasy-icons-size-xs);
+
+  &--s {
+    width: var(--creasy-icons-size-s);
+    height: var(--creasy-icons-size-s);
+  }
+
+  &--m {
+    width: var(--creasy-icons-size-m);
+    height: var(--creasy-icons-size-m);
+  }
+
+  &--l {
+    width: var(--creasy-icons-size-l);
+    height: var(--creasy-icons-size-l);
+  }
+
+  &--color-white {
+    fill: var(--creasy-palette-storm-10);
+  }
+
+  &--color-primary {
+    fill: var(--creasy-palette-dusk-130);
+  }
+
+  &--color-secondary {
+    fill: var(--creasy-palette-golf);
+  }
+
+  &--color-danger {
+    fill: var(--creasy-palette-berry);
+  }
+}

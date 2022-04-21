@@ -1,0 +1,35 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`FieldGroup should render field group with label 1`] = `
+<div
+  className="creasy-field-group creasy-field-group--place-left"
+>
+  <div
+    className="creasy-field-group__label"
+  >
+    <label>
+      <Label />
+    </label>
+    <span
+      className="creasy-field-group__accessory"
+    />
+  </div>
+  <div
+    className="creasy-field-group__input"
+  >
+    <Input />
+  </div>
+</div>
+`;
+
+exports[`FieldGroup should render field group without label 1`] = `
+<div
+  className="creasy-field-group creasy-field-group--place-left"
+>
+  <div
+    className="creasy-field-group__input creasy-field-group__input--full"
+  >
+    <Input />
+  </div>
+</div>
+`;

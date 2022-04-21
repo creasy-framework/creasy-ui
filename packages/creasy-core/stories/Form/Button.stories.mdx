@@ -1,21 +1,71 @@
 import { Meta } from '@storybook/addon-docs';
 import { ArgsTable } from '@storybook/addon-docs';
-import { Playground } from 'storybook-addon-jarle-monaco';
 import { Button } from '../../src';
+import { Icons } from '../../src';
 
 <Meta title="Components/Form/Button" />
 
-> Use `Playground` in *.stories.mdx file, it provides live preview and editor
+## Buttons
+```tsx live
+<>
+  <Button>Default</Button>
+  <Button type="outlined">Outlined</Button>
+  <Button type="text">Text</Button>
+  <Button type="link">Link</Button>
+</>
+```
 
-### Button
+## Built-in colors
+```tsx live
+<>
+  <Button color="primary">Primary</Button>
+  <Button color="secondary">Secondary</Button>
+  <Button color="danger">Danger</Button>
+  <Button color="primary" type="outlined">Primary</Button>
+  <Button color="secondary" type="outlined">Secondary</Button>
+  <Button color="danger" type="outlined">Danger</Button>
+  <Button color="primary" type="text">Primary</Button>
+  <Button color="secondary" type="text">Secondary</Button>
+  <Button color="danger" type="text">Danger</Button>
+  <Button color="primary" type="link">Primary</Button>
+  <Button color="secondary" type="link">Secondary</Button>
+  <Button color="danger" type="link">Danger</Button>
+</>
+```
 
-<Playground
-  code="<Button primary label={'hello'} />"
-  providerProps={{
-    scope: {
-      Button,
-    },
-  }}
-/>
+## Shadow effect
+```tsx live
+<Button shadow>Shadow</Button>
+```
+
+## Sizes
+```tsx live
+<>
+  <Button color="primary" type="outlined" size="auto">AUTO</Button>
+  <Button color="primary" type="outlined" size="xs">XS</Button>
+  <Button color="primary" type="outlined" size="s">S</Button>
+  <Button color="primary" type="outlined" size="m">M</Button>
+  <Button color="primary" type="outlined" size="l">L</Button>
+  <Button color="primary" type="outlined" size="xl">XL</Button>
+</>
+```
+
+## Disabled
+```tsx live
+<>
+  <Button disabled>Disabled</Button>
+  <Button type="outlined" disabled>Disabled</Button>
+  <Button type="text" disabled>Disabled</Button>
+  <Button type="link" disabled>Disabled</Button>
+</>
+```
+
+## With Icon
+```tsx live
+<>
+  <Button color="primary" type="outlined" icon={<Icons.Chart/>}>Place on left</Button>
+  <Button color="primary" type="outlined" icon={<Icons.Form/>} iconPlacement="right">Place on right</Button>
+</>
+```
 
 <ArgsTable of={Button} />

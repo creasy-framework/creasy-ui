@@ -1,0 +1,20 @@
+import { Meta } from '@storybook/addon-docs';
+import { ArgsTable } from '@storybook/addon-docs';
+import { DatePicker } from '../../src';
+
+<Meta title="Components/Form/Date Picker" />
+
+### Date Picker
+
+```tsx live
+render(() => {
+  const [date, setDate] = React.useState('');
+  return (
+    <div style={{height: 300}}>
+        <DatePicker value={date} onChange={date => setDate(date)}/>
+    </div>
+  );
+})
+```
+
+<ArgsTable of={DatePicker} />

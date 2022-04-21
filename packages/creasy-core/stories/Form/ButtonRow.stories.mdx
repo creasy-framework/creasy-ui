@@ -1,0 +1,21 @@
+import { Meta } from '@storybook/addon-docs';
+import { ArgsTable } from '@storybook/addon-docs';
+import { ButtonRow } from '../../src';
+
+<Meta title="Components/Form/Button Row" />
+
+## Button Row
+> Responsive button layout, usually used in footer section of dialog or form. Resize browser window to small size to see how doest the buttons render on mobile devices.
+
+```tsx live
+<ButtonRow
+  primary={[
+    <Button key="save-btn" color="secondary" size="m">Save</Button>,
+    <Button key="delete-btn" color="danger" size="m">Delete</Button>
+  ]}
+  secondary={[<Button key="cancel-btn"  size="m">Cancel</Button>]}
+>
+</ButtonRow>
+```
+
+<ArgsTable of={ButtonRow} />

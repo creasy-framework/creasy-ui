@@ -25,7 +25,7 @@ export const parameters = {
         'Getting Started', ['Installation'],
         'Components', [
           'Form', ['Button', 'Button Row', 'Input', 'Rich Editor', 'Date Picker', 'Checkbox', 'Toggle', 'Select', 'Auto Complete' ],
-          'Messaging', [],
+          'Messaging', ['Badge', 'Spinner', 'Balloon', 'Tooltip', 'Page State'],
           'Graphic']
       ],
     },

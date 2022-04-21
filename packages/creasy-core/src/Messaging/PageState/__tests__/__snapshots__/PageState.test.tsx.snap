@@ -1,0 +1,67 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PageState should render properly when has image and buttons 1`] = `
+<div
+  className="creasy-page-state"
+>
+  <div
+    className="creasy-page-state__image"
+  >
+    <img
+      src="http://foo"
+    />
+  </div>
+  <div
+    className="creasy-page-state__context"
+  >
+    <div
+      className="creasy-page-state__title"
+    >
+      <h3>
+        Title
+      </h3>
+    </div>
+    <div
+      className="creasy-page-state__description"
+    >
+      desc
+    </div>
+  </div>
+  <div
+    className="creasy-page-state__action"
+  >
+    <button
+      key="btn1"
+    />
+    <button
+      key="btn2"
+    />
+  </div>
+</div>
+`;
+
+exports[`PageState should render properly without button and image 1`] = `
+<div
+  className="creasy-page-state"
+>
+  <div
+    className="creasy-page-state__context"
+  >
+    <div
+      className="creasy-page-state__title"
+    >
+      <h3>
+        Title
+      </h3>
+    </div>
+    <div
+      className="creasy-page-state__description"
+    >
+      desc
+    </div>
+  </div>
+  <div
+    className="creasy-page-state__action"
+  />
+</div>
+`;

@@ -1,0 +1,36 @@
+.creasy-badge {
+  display: inline-flex;
+  white-space: nowrap;
+  background-color: var(--creasy-palette-storm-28);
+  align-items: center;
+  justify-content: center;
+  border-radius: .8rem;
+  margin: 0.2rem;
+  padding: .4rem .5rem;
+  line-height: 1;
+  font-size: .8rem;
+  color: white;
+  svg {
+    fill: white;
+  }
+
+  &--color-primary {
+    background-color: var(--creasy-palette-dusk-130);
+  }
+
+  &--color-secondary {
+    background-color: var(--creasy-palette-golf);
+  }
+
+  &--color-danger {
+    background-color: var(--creasy-palette-berry);
+  }
+
+  &__label {
+    overflow: hidden;
+    white-space: nowrap;
+    padding-left: .4em;
+    padding-right: .4rem;
+    text-overflow: ellipsis;
+  }
+}

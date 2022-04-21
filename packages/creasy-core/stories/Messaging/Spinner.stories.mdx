@@ -1,0 +1,33 @@
+import { Meta } from '@storybook/addon-docs';
+import { ArgsTable } from '@storybook/addon-docs';
+import { Spinner } from '../../src';
+
+<Meta title="Components/Messaging/Spinner" />
+
+## Spinners
+
+```tsx live expanded
+<>
+  <Spinner type="box" title="BOX"/>
+  <Spinner type="donut" title="DONUT"/>
+  <Spinner type="ellipsis" title="ELLIPSIS"/>
+</>
+```
+
+## Sizes
+```tsx live
+<>
+  <Spinner size="s" title="Small"/>
+  <Spinner size="m" title="Medium"/>
+  <Spinner size="l" title="Large"/>
+  <Spinner type="donut" size="s" title="Small"/>
+  <Spinner type="donut" size="m" title="Medium"/>
+  <Spinner type="donut" size="l" title="Large"/>
+  <Spinner type="ellipsis" size="s" title="Small"/>
+  <Spinner type="ellipsis" size="m" title="Medium"/>
+  <Spinner type="ellipsis" size="l" title="Large"/>
+</>
+```
+
+
+<ArgsTable of={Spinner} />

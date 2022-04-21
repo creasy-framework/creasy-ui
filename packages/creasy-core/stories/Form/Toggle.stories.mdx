@@ -4,28 +4,28 @@ import { Toggle } from '../../src';
 
 <Meta title="Components/Form/Toggle" />
 
-### Toggle
+## Toggle
 
-```tsx live
+```tsx live expanded
 render(() => {
   const [checked, setChecked] = React.useState(false);
   return <Toggle label="Toggle" checked={checked} onChange={(e: any) => setChecked(e.target.checked)} />;
 })
 ```
 
-### Disabled
+## Disabled
 
 ```tsx live
 <Toggle label="Disabled" checked={true} disabled />
 ```
 
-### Read only
+## Read only
 
 ```tsx live
 <Toggle label="Read only" checked={true} readOnly />
 ```
 
-### Required
+## Required
 
 ```tsx live
 <Toggle label="Required" checked={true} isRequired />

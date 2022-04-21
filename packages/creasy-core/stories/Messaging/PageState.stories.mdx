@@ -1,0 +1,22 @@
+import { Meta } from '@storybook/addon-docs';
+import { ArgsTable } from '@storybook/addon-docs';
+import { PageState, Button } from '../../src';
+import img from '../assets/no-results-found.svg';
+
+<Meta title="Components/Messaging/Page State" />
+
+## PageState
+
+<Canvas expanded live scope={{ img }}>
+  <PageState
+    image={img}
+    title="No result found"
+    description="Please change your filter or create some data"
+    buttons={[
+      <Button color="primary" type="link">Retry</Button>,
+      <Button color="primary" type="link">Create some data</Button>,
+    ]}
+  />
+</Canvas>
+
+<ArgsTable of={PageState} />

@@ -1,0 +1,46 @@
+import { Meta } from '@storybook/addon-docs';
+import { ArgsTable } from '@storybook/addon-docs';
+import { Tooltip, Icons, Select } from '../../src';
+
+<Meta title="Components/Messaging/Tooltip" />
+
+## Tooltip
+
+```tsx live expanded
+<Tooltip content={<span>This is tooltip</span>}>
+  <span>Hover on me</span>
+</Tooltip>
+```
+
+## Placements
+
+```tsx live
+render(() => {
+    const placements = [
+      { value: 'left', label: 'Left' },
+      { value: 'right', label: 'Right' },
+      { value: 'top', label: 'Top' },
+      { value: 'bottom', label: 'Bottom' },
+    ];
+    const [placement, setPlacement] = React.useState('left');
+    const onChange = (selection) => {
+        setPlacement(selection);
+    }
+    return (
+        <div style={{height: 200}}>
+          <Select
+            size="m"
+            clearable={false}
+            options={placements}
+            label="Placements"
+            selectedValue={placement}
+            onChange={onChange} />
+          <Tooltip placement={placement} content={<span>This is tooltip</span>}>
+            <span>Hover on me</span>
+          </Tooltip>
+        </div>
+    )
+})
+```
+
+<ArgsTable of={Tooltip} />

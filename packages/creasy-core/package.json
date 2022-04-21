@@ -53,6 +53,8 @@
     "@types/react-toggle": "^4.0.2",
     "@typescript-eslint/eslint-plugin": "^2.26.0",
     "@typescript-eslint/parser": "^2.26.0",
+    "@types/draft-js": "^0.10.29",
+    "@types/rc-tooltip": "^3.7.2",
     "autoprefixer": "^10.4.4",
     "babel-eslint": "^10.0.3",
     "babel-jest": "^27.5.1",
@@ -99,7 +101,8 @@
     "moment": "^2.29.3",
     "react-day-picker": "^7.4.8",
     "react-select": "^3.1.0",
-    "react-toggle": "^4.1.1"
+    "react-toggle": "^4.1.1",
+    "rc-tooltip": "^4.0.3"
   },
   "jest": {
     "collectCoverageFrom": [

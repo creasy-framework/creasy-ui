@@ -4,9 +4,9 @@ import { Select } from '../../src';
 
 <Meta title="Components/Form/Select" />
 
-### Select
+## Select
 
-```tsx live
+```tsx live expanded
 render(() => {
   const [value, setValue] = React.useState();
   const colours = [
@@ -14,7 +14,7 @@ render(() => {
     { value: 'g', label: 'Green' },
     { value: 'b', label: 'Blue' },
   ];
-  const onChange = (selection: any) => setValue(selection?.value)
+  const onChange = (selection) => setValue(selection)
 
   return (
     <div style={{ height: 200 }}>
@@ -30,7 +30,7 @@ render(() => {
 })
 ```
 
-### Clearable
+## Clearable
 
 ```tsx live
 render(() => {
@@ -40,7 +40,7 @@ render(() => {
     { value: 'g', label: 'Green' },
     { value: 'b', label: 'Blue' },
   ];
-  const onChange = (selection: any) => setValue(selection?.value)
+  const onChange = (selection) => setValue(selection)
 
   return (
     <div style={{ height: 200 }}>
@@ -56,7 +56,7 @@ render(() => {
 })
 ```
 
-### Multi Select
+## Multi Select
 
 ```tsx live
 render(() => {
@@ -66,8 +66,8 @@ render(() => {
     { value: 'g', label: 'Green' },
     { value: 'b', label: 'Blue' },
   ];
-  const onChange = (selection: any) => {
-      setValue(selection?.value);
+  const onChange = (selection) => {
+      setValue(selection);
   }
   return (
     <div style={{ height: 200 }}>

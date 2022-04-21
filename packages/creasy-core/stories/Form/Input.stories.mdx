@@ -4,9 +4,9 @@ import { Input, Icons, Button } from '../../src';
 
 <Meta title="Components/Form/Input" />
 
-### Inputs
+## Inputs
 
-```tsx live
+```tsx live expanded
 render(() => {
   const [value1, setValue1] = React.useState<string>('');
   const [value2, setValue2] = React.useState<string>('');
@@ -19,19 +19,19 @@ render(() => {
 })
 ```
 
-### Label placement
+## Label placement
 
 ```tsx live
 <Input label="Label" labelPlacement="top"/>
 ```
 
-### Left & right parts
+## Left & right parts
 
 ```tsx live
 <Input left={<Icons.Form/>} right={<Button color="danger">Clear</Button>}/>
 ```
 
-### Sizes
+## Sizes
 
 ```tsx live
 <>
@@ -43,7 +43,7 @@ render(() => {
 </>
 ```
 
-### Disabled & readonly
+## Disabled & readonly
 
 ```tsx live
 <>
@@ -52,13 +52,13 @@ render(() => {
 </>
 ```
 
-### Required
+## Required
 
 ```tsx live
 <Input isRequired label="ID #"/>
 ```
 
-### Customized label accessory
+## Customized label accessory
 
 ```tsx live
 <Input labelAccessory={<Icons.QuestionMark color="primary"/>} label="Home address"/>

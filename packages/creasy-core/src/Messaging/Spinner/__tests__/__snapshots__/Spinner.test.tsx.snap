@@ -1,0 +1,73 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Spinner should render default spinner 1`] = `
+<div
+  className="creasy-spinner"
+>
+  <div
+    className="creasy-spinner__animation creasy-spinner__animation--size-m"
+  >
+    <Box />
+  </div>
+</div>
+`;
+
+exports[`Spinner should render donut 1`] = `
+<div
+  className="creasy-spinner"
+>
+  <div
+    className="creasy-spinner__animation creasy-spinner__animation--size-m"
+  >
+    <Donut />
+  </div>
+</div>
+`;
+
+exports[`Spinner should render ellipsis 1`] = `
+<div
+  className="creasy-spinner"
+>
+  <div
+    className="creasy-spinner__animation creasy-spinner__animation--size-m"
+  >
+    <Ellipsis />
+  </div>
+</div>
+`;
+
+exports[`Spinner should render large size spinner 1`] = `
+<div
+  className="creasy-spinner"
+>
+  <div
+    className="creasy-spinner__animation creasy-spinner__animation--size-l"
+  >
+    <Box />
+  </div>
+</div>
+`;
+
+exports[`Spinner should render medium size spinner 1`] = `
+<div
+  className="creasy-spinner"
+>
+  <div
+    className="creasy-spinner__animation creasy-spinner__animation--size-m"
+  >
+    <Box />
+  </div>
+</div>
+`;
+
+exports[`Spinner should render small size spinner 1`] = `
+<div
+  className="creasy-spinner"
+>
+  <div
+    className="creasy-spinner__animation creasy-spinner__animation--size-s"
+  >
+    <Box />
+  </div>
+</div>
+`;

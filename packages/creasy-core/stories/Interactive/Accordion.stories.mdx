@@ -1,0 +1,23 @@
+import { Meta } from '@storybook/addon-docs';
+import { ArgsTable } from '@storybook/addon-docs';
+import { Accordion } from '../../src';
+
+<Meta title="Components/Interactive/Accordion" />
+
+## Accordion
+
+```tsx live expanded
+<Accordion>
+ <Accordion.Panel header="Panel 1" key="p1">
+   <p>This is panel 1</p>
+ </Accordion.Panel>
+ <Accordion.Panel header="Panel 2" key="p2">
+   <p>This is panel 2</p>
+ </Accordion.Panel>
+ <Accordion.Panel header="Panel 3" key="p3">
+   <p>This is panel 3</p>
+ </Accordion.Panel>
+</Accordion>
+```
+
+<ArgsTable of={Accordion} />

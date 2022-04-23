@@ -30,7 +30,7 @@ class Input extends React.Component<Props> {
     hasFocus: false,
   };
 
-  defaultProps = {
+  static defaultProps = {
     type: 'outlined',
     labelPlacement: 'left'
   }

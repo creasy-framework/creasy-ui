@@ -1,0 +1,55 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`IconButton should not render drawer when it closed 1`] = `
+<Fragment>
+  <Card
+    className="creasy-drawer creasy-drawer--left"
+    header={
+      <DrawerHeader
+        placement="left"
+      />
+    }
+  >
+    <Content />
+  </Card>
+  <div
+    className="creasy-drawer-overlay"
+  />
+</Fragment>
+`;
+
+exports[`IconButton should render drawer when it opened 1`] = `
+<Fragment>
+  <Card
+    className="creasy-drawer creasy-drawer--left creasy-drawer--opened"
+    header={
+      <DrawerHeader
+        placement="left"
+      />
+    }
+  >
+    <Content />
+  </Card>
+  <div
+    className="creasy-drawer-overlay creasy-drawer-overlay--show"
+  />
+</Fragment>
+`;
+
+exports[`IconButton should render with right style when place to right 1`] = `
+<Fragment>
+  <Card
+    className="creasy-drawer creasy-drawer--right"
+    header={
+      <DrawerHeader
+        placement="right"
+      />
+    }
+  >
+    <Content />
+  </Card>
+  <div
+    className="creasy-drawer-overlay"
+  />
+</Fragment>
+`;

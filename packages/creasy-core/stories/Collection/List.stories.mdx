@@ -1,0 +1,23 @@
+import { Meta } from '@storybook/addon-docs';
+import { ArgsTable } from '@storybook/addon-docs';
+import { List } from '../../src';
+
+<Meta title="Components/Collection/List" />
+
+## List
+
+```tsx live expanded
+<Card>
+  <List>
+    <List.Item icon={<Icons.Form />}>
+      Forms
+    </List.Item>
+    <List.Item icon={<Icons.Chart />}>
+      Reports
+    </List.Item>
+  </List>
+</Card>
+```
+
+### ListItem
+<ArgsTable of={List.Item} />

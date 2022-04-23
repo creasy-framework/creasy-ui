@@ -1,0 +1,47 @@
+import { Meta } from '@storybook/addon-docs';
+import { ArgsTable } from '@storybook/addon-docs';
+import { Card } from '../../src';
+
+<Meta title="Components/Layout/Card" />
+
+## Card
+
+```tsx live expanded
+<Card>
+  <p>This is a card</p>
+</Card>
+```
+
+## With header
+```tsx live
+<Card
+  header={
+    <Card.Header
+      icon={<Icons.Chart/>}
+      primary="Header"
+      secondary={<Button color="secondary">Create new</Button>}
+    />
+  }
+>
+  <div>This is a card with header</div>
+</Card>
+```
+
+## With footer
+```tsx live
+<Card
+  footer={
+    <ButtonRow
+      primary={[
+        <Button key="save-btn" color="secondary" size="m">Save</Button>,
+        <Button key="delete-btn" color="danger" size="m">Delete</Button>
+      ]}
+    >
+    </ButtonRow>
+  }
+>
+  <div>This is a card with footer</div>
+</Card>
+```
+
+<ArgsTable of={Card} />

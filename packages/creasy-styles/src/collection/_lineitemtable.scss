@@ -1,0 +1,28 @@
+.creasy-line-item-table {
+  &__row {
+    &:last-child {
+      > * {
+        opacity: 0.4;
+      }
+      .creasy-line-item-table__remove-button {
+        visibility: hidden;
+      }
+    }
+  }
+
+  &__remove-button {
+    cursor: pointer;
+    background-color: transparent;
+    &:hover {
+      background-color: transparent;
+      svg {
+        fill: var(--creasy-palette-dusk-100);
+      }
+    }
+  }
+
+  &__remove {
+    flex: 0 0 auto;
+    width: 3rem;
+  }
+}

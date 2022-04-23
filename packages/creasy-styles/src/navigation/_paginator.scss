@@ -1,0 +1,19 @@
+.creasy-paginator {
+  display: flex;
+  padding: .5rem;
+  font-weight: bold;
+  color: var(--creasy-palette-dusk-130);
+  svg {
+    fill: var(--creasy-palette-dusk-130);
+  }
+
+  &__link {
+    margin: 0;
+    width: 33px;
+    height: 33px;
+    &--active {
+      background: var(--creasy-palette-dusk-130);
+      color: white;
+    }
+  }
+}

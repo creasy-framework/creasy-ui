@@ -1,0 +1,48 @@
+import { Meta } from '@storybook/addon-docs';
+import { ArgsTable } from '@storybook/addon-docs';
+import { InfinityScroller } from '../../src';
+
+<Meta title="Components/Interactive/Infinity Scrolling" />
+
+## Infinity scroller
+
+> There are 3 pages in total
+
+```tsx live expanded
+render(() => {
+  const TOTAL_ITEMS = 30;
+  const [items, setItems] = React.useState(Array(10).fill(null));
+  const scrollParent = React.useRef();
+  const loadMore = () => {
+    setTimeout(() => {
+      setItems([...items, ...Array(10).fill(null)]);
+    }, 100);
+  };
+
+  return (
+    <div style={{ height: 300 }}>
+      <Scrollable ref={scrollParent}>
+        <InfinityScroller
+          loadMore={loadMore}
+          hasMore={items.length < TOTAL_ITEMS}
+          getScrollParent={() => scrollParent.current}
+        >
+          <List>
+            {
+              items.map((_, i) =>  (
+                <>
+                  <List.Item onClick={close} icon={<Icons.Form/>}>
+                    {i}
+                  </List.Item>
+                </>
+              ))
+            }
+          </List>
+        </InfinityScroller>
+      </Scrollable>
+    </div>
+  );
+})
+```
+
+<ArgsTable of={InfinityScroller} />

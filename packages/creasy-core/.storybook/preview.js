@@ -29,7 +29,8 @@ export const parameters = {
           'Messaging', ['Avater', 'Badge', 'Spinner', 'Balloon', 'Tooltip', 'Page State'],
           'Collection', ['List', 'Table'],
           'Layout', ['Card'],
-          'Interactive', ['Accordion', 'Drawer', 'Modal', 'Scrollable', 'Quick Add', 'Launch Pad', 'Dropdown', 'Selectable Tree'],
+          'Interactive', ['Accordion', 'Drawer', 'Modal', 'Scrollable', 'Infinity Scrolling','Quick Add', 'Launch Pad', 'Dropdown', 'Selectable Tree'],
+          'Navigation', ['Menu', 'Paginator'],
           'Graphic']
       ],
     },

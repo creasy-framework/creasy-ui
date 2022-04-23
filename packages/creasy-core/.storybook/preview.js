@@ -29,7 +29,7 @@ export const parameters = {
           'Messaging', ['Avater', 'Badge', 'Spinner', 'Balloon', 'Tooltip', 'Page State'],
           'Collection', ['List', 'Table'],
           'Layout', ['Card'],
-          'Interactive', ['Accordion', 'Drawer', 'Modal', 'Scrollable'],
+          'Interactive', ['Accordion', 'Drawer', 'Modal', 'Scrollable', 'Quick Add', 'Launch Pad', 'Dropdown', 'Selectable Tree'],
           'Graphic']
       ],
     },

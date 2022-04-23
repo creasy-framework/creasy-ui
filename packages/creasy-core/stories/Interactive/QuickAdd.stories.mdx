@@ -1,0 +1,20 @@
+import { Meta } from '@storybook/addon-docs';
+import { ArgsTable } from '@storybook/addon-docs';
+import { QuickAdd } from '../../src';
+
+<Meta title="Components/Interactive/Quick Add" />
+
+## Quick add
+
+```tsx live expanded
+<div style={{height: 150}}>
+  <QuickAdd>
+    <QuickAdd.Item icon={<Icons.Form/>} tooltip="Create a new form"/>
+    <QuickAdd.Item icon={<Icons.Chart/>} tooltip="Create a new report" />
+  </QuickAdd>
+</div>
+```
+
+
+### QuickAdd.Item
+<ArgsTable of={QuickAdd.Item} />

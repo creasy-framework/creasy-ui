@@ -1,0 +1,28 @@
+import { Meta } from '@storybook/addon-docs';
+import { ArgsTable } from '@storybook/addon-docs';
+import { LaunchPad } from '../../src';
+
+<Meta title="Components/Interactive/Launch Pad" />
+
+## Launch pad
+
+```tsx live expanded
+<div style={{height: 300, display: 'flex', justifyContent: 'center', alignItems: 'flex-end'}}>
+  <LaunchPad placement="top" itemPerRow={3} useOverlay={true}>
+    <LaunchPad.Item label="Report"><Icons.Chart/></LaunchPad.Item>
+    <LaunchPad.Item label="Form"><Icons.Form/></LaunchPad.Item>
+    <LaunchPad.Item label="Menu"><Icons.Menu/></LaunchPad.Item>
+    <LaunchPad.Item label="Data"><Icons.DataSource/></LaunchPad.Item>
+    <LaunchPad.Item label="Template"><Icons.Template/></LaunchPad.Item>
+    <LaunchPad.Item label="Question"><Icons.QuestionMark/></LaunchPad.Item>
+    <LaunchPad.Item label="Help"><Icons.Info/></LaunchPad.Item>
+    <LaunchPad.Item label="Power off"><Icons.PowerOff/></LaunchPad.Item>
+  </LaunchPad>
+</div>
+```
+
+### LaunchPad
+<ArgsTable of={LaunchPad} />
+
+### LaunchPad.Item
+<ArgsTable of={LaunchPad.Item} />

@@ -1,0 +1,48 @@
+import { Meta } from '@storybook/addon-docs';
+import { ArgsTable } from '@storybook/addon-docs';
+import { SelectableTree } from '../../src';
+
+<Meta title="Components/Interactive/Selectable Tree" />
+
+## Selectable Tree
+
+```tsx live expanded
+render(() => {
+  const nodes = [
+    {
+      value: 'mobile',
+      label: 'Mobile',
+      children: [
+        { value: 'ios', label: 'IOS', children: [{ value: 'objectc', label: 'Object C' }] },
+        { value: 'android', label: 'Android' },
+      ],
+    },
+    {
+      value: 'web',
+      label: 'Web',
+      children: [
+        { value: 'react', label: 'React' },
+        { value: 'vuejs', label: 'Vue.js' },
+      ],
+    },
+  ];
+
+  const [checkState, setCheckState] = React.useState<object>({});
+  return (
+    <div style={{ background: '#ebeef1', padding: '2.4rem' }}>
+      <Card>
+        <SelectableTree
+          showSearch
+          label="Select book category"
+          menuAlignment="left"
+          treeNodes={nodes}
+          checked={checkState}
+          onCheck={checked => setCheckState(checked)}
+        />
+      </Card>
+    </div>
+  );
+})
+```
+
+<ArgsTable of={SelectableTree} />

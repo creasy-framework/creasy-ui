@@ -1,0 +1,75 @@
+.creasy-quickadd {
+  display: inline-block;
+  position: relative;
+  $containerSize: 50px;
+
+  &__trigger {
+    width: $containerSize;
+    height: $containerSize;
+    cursor: pointer;
+    transition: transform 0.3s;
+    background-color: var(--creasy-palette-dusk-130);
+    box-shadow: 0 0 8px rgba(0,0,0,0.6);
+    margin: 0;
+    > svg {
+      fill: white;
+      width: 20px;
+      height: 20px;
+    }
+
+    &--color-primary {
+      background-color: var(--creasy-palette-dusk-130);
+    }
+
+    &--color-secondary {
+      background-color: var(--creasy-pw-palette-golf);
+    }
+
+    &--expanded {
+      transform: rotate(45deg);
+      transition: transform 0.3s;
+    }
+  }
+
+  &__items {
+    position: absolute;
+    width: $containerSize;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: hidden;
+    flex-grow: 1;
+    height: 0px;
+    transition: all 1s;
+    opacity: 0;
+
+    &--expanded {
+      height: auto;
+      opacity: 1;
+      transition: all 1s;
+    }
+  }
+}
+
+.creasy-quickadd-item {
+  margin-top: 5px;
+
+  .creasy-avater {
+    background-color: #333f48;
+    width: 40px;
+    height: 40px;
+    transition: all 0.2s;
+
+    &:hover {
+      width: 45px;
+      height: 45px;
+      transition: all 0.2s;
+    }
+  }
+
+  .creasy-icon {
+    fill: white;
+    width: 25px;
+    height: 25px;
+  }
+}

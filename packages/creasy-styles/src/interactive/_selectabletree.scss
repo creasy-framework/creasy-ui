@@ -1,0 +1,76 @@
+.creasy-selectable-tree {
+  display: flex;
+  flex-direction: column;
+
+  &__children {
+    padding: 0.1rem 0 0.1rem 1rem;
+    height: 0;
+    overflow: hidden;
+    &--expanded {
+      height: auto;
+      overflow: visible;
+    }
+  }
+
+  &__row {
+    display: flex;
+
+    .creasy-selectable-tree__menu {
+      visibility: hidden;
+      z-index: 999;
+    }
+
+    &:hover {
+      .creasy-selectable-tree__menu {
+        visibility: visible;
+      }
+    }
+  }
+
+  &__label {
+    margin-top: 5px;
+    font-size: 16px;
+  }
+
+  &__arrow {
+    border: 0;
+    background: none;
+    outline: none;
+    cursor: pointer;
+    padding: 0;
+    .creasy-icon {
+      visibility: hidden;
+    }
+    &--show {
+      .creasy-icon {
+        visibility: visible;
+      }
+    }
+  }
+
+  .creasy-selectable-tree-icon {
+    fill: var(--creasy-palette-dusk-70);
+    width: 1.2rem;
+    height: 1.2rem;
+    position: relative;
+    top: 1px;
+  }
+
+  .creasy-selectable-tree__menu-icon {
+    padding-left: .5rem;
+    padding-top: .1rem;
+    cursor: pointer;
+    fill: var(--creasy-palette-dusk-72);
+  }
+}
+
+.creasy-selectable-tree--close {
+  transform: rotateZ(-90deg);
+}
+
+.creasy-selectable-tree-search {
+  width: 90%;
+  .creasy-icon {
+    fill: var(--creasy-palette-dusk-70);
+  }
+}

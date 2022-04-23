@@ -3,7 +3,7 @@ import { shallow, ShallowWrapper } from 'enzyme';
 import toJson from 'enzyme-to-json';
 
 import Modal from '../Modal';
-import Icons from '../../../graphic/Icons';
+import Icons from '../../../Graphic/Icons';
 
 describe('Modal', () => {
   const Content = () => <>Content</>;

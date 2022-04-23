@@ -3,7 +3,7 @@ import { shallow, ShallowWrapper } from 'enzyme';
 import toJson from 'enzyme-to-json';
 
 import IconButton from '../IconButton';
-import Icons from '../../../graphic/Icons';
+import Icons from '../../../Graphic/Icons';
 
 describe('IconButton', () => {
   it('should render icon button correct', () => {

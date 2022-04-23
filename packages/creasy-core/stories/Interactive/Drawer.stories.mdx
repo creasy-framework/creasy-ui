@@ -1,0 +1,65 @@
+import { Meta } from '@storybook/addon-docs';
+import { ArgsTable } from '@storybook/addon-docs';
+import { Drawer } from '../../src';
+
+<Meta title="Components/Interactive/Drawer" />
+
+## Drawer
+
+```tsx live expanded
+render(() => {
+  const [isShow, setIsShow] = React.useState(false);
+  const close = () => setIsShow(false);
+  const open = () => setIsShow(true);
+  return (
+    <>
+      <Button color="primary" type="outlined" onClick={open}>
+        Open drawer
+      </Button>
+      <Drawer header={
+        <h3>Creasy UI</h3>
+      } isShow={isShow} onClose={close}>
+        <List>
+          <List.Item icon={<Icons.Form />}>
+            Forms
+          </List.Item>
+          <List.Item icon={<Icons.Chart />}>
+            Reports
+          </List.Item>
+        </List>
+      </Drawer>
+    </>
+  );
+});
+```
+
+## Placement
+
+```tsx live expanded
+render(() => {
+  const [isShow, setIsShow] = React.useState(false);
+  const close = () => setIsShow(false);
+  const open = () => setIsShow(true);
+  return (
+    <>
+      <Button color="primary" type="outlined" onClick={open}>
+        Open drawer
+      </Button>
+      <Drawer placement="right" header={
+        <h3>Creasy UI</h3>
+      } isShow={isShow} onClose={close}>
+        <List>
+          <List.Item icon={<Icons.Form />}>
+            Forms
+          </List.Item>
+          <List.Item icon={<Icons.Chart />}>
+            Reports
+          </List.Item>
+        </List>
+      </Drawer>
+    </>
+  );
+});
+```
+
+<ArgsTable of={Drawer} />

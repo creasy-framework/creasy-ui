@@ -4,6 +4,7 @@ import theme from 'prism-react-renderer/themes/github';
 // import { themes } from '@storybook/theming'
 import '../../creasy-styles/src/index.scss';
 import * as AllComponents from '../src';
+import { docsTheme } from "./creasy";
 
 addons.setConfig({
   [LIVE_EXAMPLES_ADDON_ID]: {
@@ -24,11 +25,17 @@ export const parameters = {
       order: [
         'Getting Started', ['Installation'],
         'Components', [
-          'Form', ['Button', 'Button Row', 'Input', 'Rich Editor', 'Date Picker', 'Checkbox', 'Toggle', 'Select', 'Auto Complete' ],
-          'Messaging', ['Badge', 'Spinner', 'Balloon', 'Tooltip', 'Page State'],
+          'Form', ['Button', 'Button Row', 'Icon Button', 'Input', 'Rich Editor', 'Date Picker', 'Checkbox', 'Toggle', 'Select', 'Auto Complete' ],
+          'Messaging', ['Avater', 'Badge', 'Spinner', 'Balloon', 'Tooltip', 'Page State'],
+          'Collection', ['List', 'Table'],
+          'Layout', ['Card'],
+          'Interactive', ['Accordion', 'Drawer', 'Modal', 'Scrollable'],
           'Graphic']
       ],
     },
+  },
+  docs: {
+    theme: docsTheme,
   },
   controls: {
     matchers: {

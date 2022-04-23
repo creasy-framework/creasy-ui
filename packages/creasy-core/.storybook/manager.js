@@ -1,10 +1,10 @@
 import { addons } from '@storybook/addons';
-import creasy from './creasy';
-// import { themes } from '@storybook/theming';
+import { appTheme } from './creasy';
+import { themes } from '@storybook/theming';
 
 addons.setConfig({
   // theme: themes.dark,
-  theme: creasy,
+  theme: appTheme,
   sidebar: {
     // showRoots: false,
   },

@@ -1,0 +1,45 @@
+.creasy-avater {
+  border-radius: 50%;
+  margin: 0 10px 0 10px;
+  display: flex;
+  position: relative;
+  overflow: hidden;
+  align-items: center;
+  flex-shrink: 0;
+  user-select: none;
+  justify-content: center;
+  cursor: pointer;
+  background: var(--creasy-palette-storm-50);
+  &__container {
+    display: inline-block;
+  }
+  &--s {
+    width: 30px;
+    height: 30px;
+  }
+  &--m {
+    width: 40px;
+    height: 40px;
+  }
+  &--l {
+    width: 60px;
+    height: 60px;
+  }
+  &--shadow {
+    box-shadow: 0 0 8px rgba(0,0,0,.2);
+  }
+  &--color-primary {
+    background-color: var(--creasy-palette-dusk-130);
+    color: var(--creasy-palette-storm-10);
+  }
+
+  &--color-secondary {
+    background-color: var(--creasy-palette-golf);
+    color: var(--creasy-palette-storm-10);
+  }
+
+  &--color-danger {
+    background-color: var(--creasy-palette-berry);
+    color: var(--creasy-palette-storm-10);
+  }
+}

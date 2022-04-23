@@ -1,0 +1,50 @@
+.creasy-card {
+  margin-bottom: 0.8rem;
+  background-color: white;
+  border-radius: 0.4rem;
+  box-shadow: 0 1px 2px 0 rgba(46, 62, 79, 0.1);
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  box-sizing: border-box;
+
+  &__header {
+    display: flex;
+    align-items: center;
+    padding: 1.2rem;
+    border-bottom: 1px solid var(--creasy-palette-storm-11);
+  }
+
+  &__body {
+    padding: 1.2rem;
+    flex-grow: 1;
+    position: relative;
+  }
+
+  &__footer {
+    border-top: 1px solid var(--creasy-palette-storm-11);
+    padding: 1.2rem;
+  }
+}
+
+.creasy-card-header {
+  display: flex;
+  width: 100%;
+  box-sizing: border-box;
+  align-items: center;
+
+  &__primary {
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+  }
+
+  &__icon {
+    padding-right: 1rem;
+    .creasy-icon {
+      width: 2rem;
+      height: 2rem;
+      fill: var(--creasy-palette-dusk-100);
+    }
+  }
+}

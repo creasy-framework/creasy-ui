@@ -1,0 +1,34 @@
+import { Meta } from '@storybook/addon-docs';
+import { ArgsTable } from '@storybook/addon-docs';
+import { Scrollable } from '../../src';
+
+<Meta title="Components/Interactive/Scrollable" />
+
+## Scrollable
+
+> This scrollable component offers end user with consistent experience on across browsers and devices.
+
+```tsx live expanded
+<Card>
+  <div style={{ height: 200 }}>
+    <Scrollable>
+      <List>
+        {
+          Array.from({ length: 10 }).map(() => (
+            <>
+              <List.Item onClick={close} icon={<Icons.Form/>}>
+                Forms
+              </List.Item>
+              <List.Item onClick={close} icon={<Icons.Chart/>}>
+                Reports
+              </List.Item>
+            </>
+          ))
+        }
+      </List>
+    </Scrollable>
+  </div>
+</Card>
+```
+
+<ArgsTable of={Scrollable} />

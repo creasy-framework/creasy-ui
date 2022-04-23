@@ -1,0 +1,115 @@
+import { Meta } from '@storybook/addon-docs';
+import { ArgsTable } from '@storybook/addon-docs';
+import { Table } from '../../src';
+
+<Meta title="Components/Collection/Table" />
+
+## Table
+
+> Table will be rendered as card list on small device, resize your browser to try it out.
+
+```tsx live expanded
+<Table>
+   <Table.Header>
+     <Table.HeaderItem>Name</Table.HeaderItem>
+     <Table.HeaderItem>Job title</Table.HeaderItem>
+     <Table.HeaderItem>Team</Table.HeaderItem>
+     <Table.HeaderItem>On boarding date</Table.HeaderItem>
+     <Table.HeaderItem>Status</Table.HeaderItem>
+   </Table.Header>
+   <Table.Body>
+     <Table.Row>
+       <Table.RowItem columnName="Name">CHENG LI</Table.RowItem>
+       <Table.RowItem columnName="Job title">Senior Developer</Table.RowItem>
+       <Table.RowItem columnName="Team">Customer Service</Table.RowItem>
+       <Table.RowItem columnName="On boarding date">01/02/2020</Table.RowItem>
+       <Table.RowItem columnName="Status">Active</Table.RowItem>
+     </Table.Row>
+     <Table.Row>
+       <Table.RowItem columnName="Name">BOB NICK</Table.RowItem>
+       <Table.RowItem columnName="Job title">Developer</Table.RowItem>
+       <Table.RowItem columnName="Team">Financial Service</Table.RowItem>
+       <Table.RowItem columnName="On boarding date">01/02/2009</Table.RowItem>
+       <Table.RowItem columnName="Status">Active</Table.RowItem>
+     </Table.Row>
+     <Table.Row>
+       <Table.RowItem columnName="Name">ROCK IAN</Table.RowItem>
+       <Table.RowItem columnName="Job title">Senior Developer</Table.RowItem>
+       <Table.RowItem columnName="Team">IT Support</Table.RowItem>
+       <Table.RowItem columnName="On boarding date">05/02/2019</Table.RowItem>
+       <Table.RowItem columnName="Status">Inactive</Table.RowItem>
+     </Table.Row>
+   </Table.Body>
+ </Table>
+```
+
+## Text wrap
+
+> No wrap
+
+```tsx live
+<Table>
+   <Table.Header>
+     <Table.HeaderItem>Name</Table.HeaderItem>
+     <Table.HeaderItem>Message</Table.HeaderItem>
+   </Table.Header>
+   <Table.Body>
+     <Table.Row>
+       <Table.RowItem columnName="Name">BOB NICK</Table.RowItem>
+       <Table.RowItem columnName="Message">Hello, this is BOB, I hope you are doing well. I'm writing this email to inquire about the pricing of your pest control service</Table.RowItem>
+     </Table.Row>
+     <Table.Row>
+       <Table.RowItem columnName="Name">ROCK IAN</Table.RowItem>
+       <Table.RowItem columnName="Message">Senior Developer</Table.RowItem>
+     </Table.Row>
+   </Table.Body>
+ </Table>
+```
+
+> Break by words
+
+```tsx live
+<Table>
+   <Table.Header>
+     <Table.HeaderItem>Name</Table.HeaderItem>
+     <Table.HeaderItem>Message</Table.HeaderItem>
+   </Table.Header>
+   <Table.Body>
+     <Table.Row>
+       <Table.RowItem columnName="Name">BOB NICK</Table.RowItem>
+       <Table.RowItem textWrap="break-word" columnName="Message">Hello, this is BOB, I hope you are doing well. I'm writing this email to inquire about the pricing of your pest control service</Table.RowItem>
+     </Table.Row>
+     <Table.Row>
+       <Table.RowItem columnName="Name">ROCK IAN</Table.RowItem>
+       <Table.RowItem columnName="Message">Senior Developer</Table.RowItem>
+     </Table.Row>
+   </Table.Body>
+ </Table>
+```
+
+> Break all
+
+```tsx live
+<Table>
+   <Table.Header>
+     <Table.HeaderItem>Name</Table.HeaderItem>
+     <Table.HeaderItem>Message</Table.HeaderItem>
+   </Table.Header>
+   <Table.Body>
+     <Table.Row>
+       <Table.RowItem columnName="Name">BOB NICK</Table.RowItem>
+       <Table.RowItem textWrap="break-all" columnName="Message">FOOOMOOMPETCONTROLLESSMORETHANGOODGREATBADFOOOMOOMPETCONTROLLESSMORETHANGOODGREATBADFOOOMOOMPETCONTROLLESSMORETHANGOODGREATBADFOOOMOOMPETCONTROLLESSMORETHANGOODGREATBAD</Table.RowItem>
+     </Table.Row>
+     <Table.Row>
+       <Table.RowItem columnName="Name">ROCK IAN</Table.RowItem>
+       <Table.RowItem columnName="Message">Senior Developer</Table.RowItem>
+     </Table.Row>
+   </Table.Body>
+ </Table>
+```
+
+### HeaderItem
+<ArgsTable of={Table.HeaderItem} />
+
+### RowItem
+<ArgsTable of={Table.RowItem} />

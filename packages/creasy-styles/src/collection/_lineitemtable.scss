@@ -1,11 +1,13 @@
 .creasy-line-item-table {
-  &__row {
-    &:last-child {
-      > * {
-        opacity: 0.4;
-      }
-      .creasy-line-item-table__remove-button {
-        visibility: hidden;
+  &--appendable {
+    .creasy-line-item-table__row {
+      &:last-child {
+        > * {
+          opacity: 0.4;
+        }
+        .creasy-line-item-table__remove-button {
+          visibility: hidden;
+        }
       }
     }
   }

@@ -29,7 +29,8 @@ describe('LineItemTable', () => {
       <LineItemTable
         columnsConfig={columnsConfig}
         data={data}
-        renderRow={(index, data) => (
+      >
+        {(index, data) => (
           <LineItemTable.Row columnsConfig={columnsConfig}>
             <LineItemTable.Item>
               <Input value={data.name}/>
@@ -42,7 +43,7 @@ describe('LineItemTable', () => {
             </LineItemTable.Item>
           </LineItemTable.Row>
         )}
-      />,
+      </LineItemTable>,
     );
   });
 

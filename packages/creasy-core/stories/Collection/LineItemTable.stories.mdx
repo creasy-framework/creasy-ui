@@ -9,9 +9,113 @@ import { LineItemTable } from '../../src';
 ```tsx live expanded
 render(() => {
   const data = [
-    { id: '1', name: 'CHENG LI', team: 'Customer Service', date: '02/03/2020' },
-    { id: '2', name: 'SUN WEI', team: 'Customer Service', date: '02/03/2020' },
-    { id: '3', name: 'LIPING ZHAO', team: 'Customer Service', date: '02/03/2020' },
+    { id: '1', name: 'CHENG LI', team: 'Customer Service', date: '2020/02/03' },
+    { id: '2', name: 'SUN WEI', team: 'Customer Service', date: '2020/02/03' },
+    { id: '3', name: 'LIPING ZHAO', team: 'Customer Service', date: '2020/02/03' },
+  ];
+
+  const columnsConfig = [
+    { columnName: 'Name' },
+    { columnName: 'Team' },
+    { columnName: 'On boarding date', style: { width: 200 } },
+  ];
+
+  const [rowData, setRowData] = React.useState(data);
+  const onUpdateRow = (index: number, name: string, value: string) => {
+    const updatedRow = { ...rowData[index], [name]: value };
+    const updatedRowData = [...rowData];
+    updatedRowData[index] = updatedRow;
+    setRowData(updatedRowData);
+  };
+
+  return (
+    <div>
+      <LineItemTable
+        columnsConfig={columnsConfig}
+        data={rowData}
+        onUpdateRow={onUpdateRow}
+      >
+        {(index, data, onChange) => (
+          <LineItemTable.Row columnsConfig={columnsConfig}>
+            <LineItemTable.Item>
+              <Input value={data.name} onChange={(e) => onChange('name', e.target.value)}/>
+            </LineItemTable.Item>
+            <LineItemTable.Item>
+              <Input value={data.team} onChange={(e) => onChange('team', e.target.value)}/>
+            </LineItemTable.Item>
+            <LineItemTable.Item>
+              <DatePicker value={data.date} onChange={(date) => onChange('date', date)}/>
+            </LineItemTable.Item>
+          </LineItemTable.Row>
+        )}
+     </LineItemTable>
+  </div>
+  );
+})
+```
+
+### Appendable
+```tsx live
+render(() => {
+  const data = [
+    { id: '1', name: 'CHENG LI', team: 'Customer Service', date: '2020/02/03' },
+    { id: '2', name: 'SUN WEI', team: 'Customer Service', date: '2020/02/03' },
+    { id: '3', name: 'LIPING ZHAO', team: 'Customer Service', date: '2020/02/03' },
+  ];
+
+  const columnsConfig = [
+    { columnName: 'Name' },
+    { columnName: 'Team' },
+    { columnName: 'On boarding date', style: { width: 200 } },
+  ];
+
+  const [rowData, setRowData] = React.useState(data);
+  const onUpdateRow = (index: number, name: string, value: string) => {
+    const updatedRow = { ...rowData[index], [name]: value };
+    const updatedRowData = [...rowData];
+    updatedRowData[index] = updatedRow;
+    setRowData(updatedRowData);
+  };
+
+  const onAddRow = (newLine: any, name: string, value: any) => {
+    const newRow = { ...newLine, [name]: value };
+    setRowData([...rowData, newRow]);
+  };
+
+  return (
+    <div>
+      <LineItemTable
+        columnsConfig={columnsConfig}
+        data={rowData}
+        onUpdateRow={onUpdateRow}
+        onAddRow={onAddRow}
+      >
+        {(index, data, onChange) => (
+          <LineItemTable.Row columnsConfig={columnsConfig}>
+            <LineItemTable.Item>
+              <Input value={data.name} onChange={(e) => onChange('name', e.target.value)}/>
+            </LineItemTable.Item>
+            <LineItemTable.Item>
+              <Input value={data.team} onChange={(e) => onChange('team', e.target.value)}/>
+            </LineItemTable.Item>
+            <LineItemTable.Item>
+              <DatePicker value={data.date} onChange={(date) => onChange('date', date)}/>
+            </LineItemTable.Item>
+          </LineItemTable.Row>
+        )}
+     </LineItemTable>
+  </div>
+  );
+})
+```
+
+### Deletable
+```tsx live
+render(() => {
+  const data = [
+    { id: '1', name: 'CHENG LI', team: 'Customer Service', date: '2020/02/03' },
+    { id: '2', name: 'SUN WEI', team: 'Customer Service', date: '2020/02/03' },
+    { id: '3', name: 'LIPING ZHAO', team: 'Customer Service', date: '2020/02/03' },
   ];
 
   const columnsConfig = [
@@ -46,7 +150,8 @@ render(() => {
         onUpdateRow={onUpdateRow}
         onAddRow={onAddRow}
         onRemoveRow={onRemoveRow}
-        renderRow={(index, data, onChange) => (
+      >
+        {(index, data, onChange) => (
           <LineItemTable.Row columnsConfig={columnsConfig}>
             <LineItemTable.Item>
               <Input value={data.name} onChange={(e) => onChange('name', e.target.value)}/>
@@ -59,10 +164,11 @@ render(() => {
             </LineItemTable.Item>
           </LineItemTable.Row>
         )}
-      />
+     </LineItemTable>
   </div>
   );
 })
 ```
+
 
 <ArgsTable of={LineItemTable} />

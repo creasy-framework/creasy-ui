@@ -70,6 +70,7 @@ class Input extends React.Component<Props> {
     const { hasFocus } = this.state;
     const inputProps = {
       value,
+      onChange: () => {},
       ...otherProps,
       className: 'creasy-input__control',
       onFocus: this.onInputFocus,

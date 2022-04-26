@@ -1,4 +1,4 @@
-import React, { FunctionComponent, ReactElement } from 'react';
+import React, { FunctionComponent, ReactNode } from 'react';
 import shortid from 'shortid';
 
 import Table from '../Table/Table';
@@ -7,14 +7,15 @@ import Icons from '../../Graphic/Icons';
 import LineItemTableRow, { LineItemTableRowComponent, LineItemTableColumnConfig } from './LineItemTableRow';
 import LineItemTableRowItem, { LineItemTableRowItemComponent } from './LineItemTableRowItem';
 import IconButton from '../../Form/IconButton/IconButton';
+import classNames from "classnames";
 
 interface Props {
   data: any[];
   columnsConfig: LineItemTableColumnConfig[];
-  renderRow: (index: number, rowData: any, onUpdateRow: (...args: any) => void) => ReactElement;
-  onUpdateRow?: (index: number, ...args: any) => void;
+  onUpdateRow: (index: number, ...args: any) => void;
   onAddRow?: (...args: any) => void;
   onRemoveRow?: (index: number) => void;
+  children: (index: number, rowData: any, onUpdateRow: (...args: any) => void) => ReactNode;
 }
 
 interface LineItemTableComponent extends FunctionComponent<Props> {
@@ -25,7 +26,7 @@ interface LineItemTableComponent extends FunctionComponent<Props> {
 const LineItemTable: LineItemTableComponent = ({
  data,
  columnsConfig,
- renderRow,
+ children,
  onUpdateRow,
  onAddRow,
  onRemoveRow,
@@ -38,7 +39,7 @@ const LineItemTable: LineItemTableComponent = ({
 
   const newRow = { id: shortid.generate() };
 
-  const rows = [...data, newRow];
+  const rows = onAddRow ? [...data, newRow] : [...data];
 
   const onChange = (index: number, rowData: any, ...args: any) => {
     if (index === data.length) {
@@ -49,7 +50,7 @@ const LineItemTable: LineItemTableComponent = ({
   };
 
   return (
-    <Table>
+    <Table className={classNames('creasy-line-item-table', !!onAddRow && 'creasy-line-item-table--appendable')}>
       <Table.Header>
         {
           columnsConfig.map(({ columnName, ...otherProps }) => (
@@ -61,21 +62,27 @@ const LineItemTable: LineItemTableComponent = ({
             </Table.HeaderItem>
           ))
         }
-        <Table.RowItem className="creasy-line-item-table__remove"/>
+        {
+          onRemoveRow && <Table.RowItem className="creasy-line-item-table__remove"/>
+        }
       </Table.Header>
       <Table.Body>
         {
           rows.map((rowData, index) => (
             <Table.Row key={rowData.id} className="creasy-line-item-table__row">
-              {renderRow(index, rowData, (...args) => onChange(index, rowData, ...args))}
-              <Table.RowItem textWrap="break-all" className="creasy-line-item-table__remove" columnName="Remove" hideLabel>
-                <IconButton
-                  className="creasy-line-item-table__remove-button"
-                  onClick={() => onRemoveRow && onRemoveRow(index)}
-                >
-                  <Icons.Trash />
-                </IconButton>
-              </Table.RowItem>
+              {children(index, rowData, (...args) => onChange(index, rowData, ...args))}
+              {
+                onRemoveRow && (
+                  <Table.RowItem textWrap="break-all" className="creasy-line-item-table__remove" columnName="Remove" hideLabel>
+                    <IconButton
+                      className="creasy-line-item-table__remove-button"
+                      onClick={() => onRemoveRow(index)}
+                    >
+                      <Icons.Trash />
+                    </IconButton>
+                  </Table.RowItem>
+                )
+              }
             </Table.Row>
           ))
         }

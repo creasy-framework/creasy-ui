@@ -1,0 +1,30 @@
+import { Meta } from '@storybook/addon-docs';
+import { ArgsTable } from '@storybook/addon-docs';
+import { Menu } from '../../src';
+
+<Meta title="Components/Navigation/Menu" />
+
+## Menu
+
+```tsx live expanded
+<Menu>
+  <Menu.Group id="forms" label="Forms" icon={<Icons.Form/>}>
+    <Menu.Item id="my-form">My forms</Menu.Item>
+    <Menu.Item active id="submitted-form">Submitted forms</Menu.Item>
+  </Menu.Group>
+  <Menu.Group id="reports" label="Reports"  icon={<Icons.Chart/>}>
+    <Menu.Item id="my-report">My report</Menu.Item>
+  </Menu.Group>
+  <Menu.Item id="my-datasource" icon={<Icons.DataSource />}>My datasource</Menu.Item>
+</Menu>
+```
+
+### Menu
+
+<ArgsTable of={Menu} />
+
+### Menu.Group
+<ArgsTable of={Menu.Group} />
+
+### Menu.Item
+<ArgsTable of={Menu.Item} />

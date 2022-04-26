@@ -11,35 +11,63 @@ import { InfinityScroller } from '../../src';
 ```tsx live expanded
 render(() => {
   const TOTAL_ITEMS = 30;
-  const [items, setItems] = React.useState(Array(10).fill(null));
-  const scrollParent = React.useRef();
+  const [items, setItems] = React.useState(Array(10).fill(null).map(() => shortid()));
   const loadMore = () => {
     setTimeout(() => {
-      setItems([...items, ...Array(10).fill(null)]);
+      setItems([...items, ...Array(10).fill(null).map(() => shortid())]);
     }, 100);
   };
 
   return (
     <div style={{ height: 300 }}>
-      <Scrollable ref={scrollParent}>
-        <InfinityScroller
-          loadMore={loadMore}
-          hasMore={items.length < TOTAL_ITEMS}
-          getScrollParent={() => scrollParent.current}
-        >
-          <List>
-            {
-              items.map((_, i) =>  (
-                <>
-                  <List.Item onClick={close} icon={<Icons.Form/>}>
-                    {i}
-                  </List.Item>
-                </>
-              ))
-            }
-          </List>
-        </InfinityScroller>
-      </Scrollable>
+      <InfinityScroller
+        loadMore={loadMore}
+        hasMore={items.length < TOTAL_ITEMS}
+      >
+        <List>
+          {
+            items.map((key, i) =>  (
+              <List.Item key={key} onClick={close} icon={<Icons.Form/>}>
+                {i}
+              </List.Item>
+            ))
+          }
+        </List>
+      </InfinityScroller>
+    </div>
+  );
+})
+```
+
+## Custom spinner
+
+```tsx live
+render(() => {
+  const TOTAL_ITEMS = 30;
+  const [items, setItems] = React.useState(Array(10).fill(null).map(() => shortid()));
+  const loadMore = () => {
+    setTimeout(() => {
+      setItems([...items, ...Array(10).fill(null).map(() => shortid())]);
+    }, 100);
+  };
+
+  return (
+    <div style={{ height: 300 }}>
+      <InfinityScroller
+        spinner={<Spinner key="spinner" type="donut" size="s"/>}
+        loadMore={loadMore}
+        hasMore={items.length < TOTAL_ITEMS}
+      >
+        <List>
+          {
+            items.map((key, i) =>  (
+              <List.Item key={key} onClick={close} icon={<Icons.Form/>}>
+                {i}
+              </List.Item>
+            ))
+          }
+        </List>
+      </InfinityScroller>
     </div>
   );
 })

@@ -17,7 +17,7 @@ interface Props {
 
 const Toggle: FunctionComponent<Props> = ({
   checked,
-  onChange,
+  onChange = () => {},
   label,
   disabled = false,
   isRequired = false,

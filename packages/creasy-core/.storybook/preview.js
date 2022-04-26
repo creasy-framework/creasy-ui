@@ -4,7 +4,8 @@ import theme from 'prism-react-renderer/themes/github';
 // import { themes } from '@storybook/theming'
 import '../../creasy-styles/src/index.scss';
 import * as AllComponents from '../src';
-import { docsTheme } from "./creasy";
+import { docsTheme } from './creasy';
+import shortid from 'shortid';
 
 addons.setConfig({
   [LIVE_EXAMPLES_ADDON_ID]: {
@@ -14,6 +15,7 @@ addons.setConfig({
     shareText: ['Share', 'Shared'],
     scope: {
       ...AllComponents,
+      shortid,
     },
   },
 });

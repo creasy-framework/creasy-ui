@@ -27,6 +27,7 @@ const Accordion: AccordionComponent = ({
     <div className={`creasy-accordion ${className}`}>
       {panels.map((group, index) => (
         <div
+          key={group.key}
           className={classNames(
             'creasy-accordion__content',
             index === openedIndex && 'creasy-accordion__content--opened',

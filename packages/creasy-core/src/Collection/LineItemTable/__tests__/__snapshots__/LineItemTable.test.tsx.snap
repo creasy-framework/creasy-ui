@@ -1,7 +1,9 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`LineItemTable should render properly 1`] = `
-<Table>
+<Table
+  className="creasy-line-item-table"
+>
   <Header>
     <HeaderItem
       key="Name"
@@ -23,9 +25,6 @@ exports[`LineItemTable should render properly 1`] = `
     >
       On boarding date
     </HeaderItem>
-    <RowItem
-      className="creasy-line-item-table__remove"
-    />
   </Header>
   <Body>
     <Row
@@ -72,19 +71,6 @@ exports[`LineItemTable should render properly 1`] = `
           />
         </LineItemTableRowItem>
       </LineItemTableRow>
-      <RowItem
-        className="creasy-line-item-table__remove"
-        columnName="Remove"
-        hideLabel={true}
-        textWrap="break-all"
-      >
-        <IconButton
-          className="creasy-line-item-table__remove-button"
-          onClick={[Function]}
-        >
-          <Component />
-        </IconButton>
-      </RowItem>
     </Row>
     <Row
       className="creasy-line-item-table__row"
@@ -130,19 +116,6 @@ exports[`LineItemTable should render properly 1`] = `
           />
         </LineItemTableRowItem>
       </LineItemTableRow>
-      <RowItem
-        className="creasy-line-item-table__remove"
-        columnName="Remove"
-        hideLabel={true}
-        textWrap="break-all"
-      >
-        <IconButton
-          className="creasy-line-item-table__remove-button"
-          onClick={[Function]}
-        >
-          <Component />
-        </IconButton>
-      </RowItem>
     </Row>
     <Row
       className="creasy-line-item-table__row"
@@ -188,74 +161,6 @@ exports[`LineItemTable should render properly 1`] = `
           />
         </LineItemTableRowItem>
       </LineItemTableRow>
-      <RowItem
-        className="creasy-line-item-table__remove"
-        columnName="Remove"
-        hideLabel={true}
-        textWrap="break-all"
-      >
-        <IconButton
-          className="creasy-line-item-table__remove-button"
-          onClick={[Function]}
-        >
-          <Component />
-        </IconButton>
-      </RowItem>
-    </Row>
-    <Row
-      className="creasy-line-item-table__row"
-      key="123"
-    >
-      <LineItemTableRow
-        columnsConfig={
-          Array [
-            Object {
-              "columnName": "Name",
-            },
-            Object {
-              "columnName": "Team",
-            },
-            Object {
-              "columnName": "On boarding date",
-              "style": Object {
-                "width": 200,
-              },
-            },
-          ]
-        }
-      >
-        <LineItemTableRowItem>
-          <Input
-            labelPlacement="left"
-            type="outlined"
-          />
-        </LineItemTableRowItem>
-        <LineItemTableRowItem>
-          <Input
-            labelPlacement="left"
-            type="outlined"
-          />
-        </LineItemTableRowItem>
-        <LineItemTableRowItem>
-          <Input
-            labelPlacement="left"
-            type="outlined"
-          />
-        </LineItemTableRowItem>
-      </LineItemTableRow>
-      <RowItem
-        className="creasy-line-item-table__remove"
-        columnName="Remove"
-        hideLabel={true}
-        textWrap="break-all"
-      >
-        <IconButton
-          className="creasy-line-item-table__remove-button"
-          onClick={[Function]}
-        >
-          <Component />
-        </IconButton>
-      </RowItem>
     </Row>
   </Body>
 </Table>

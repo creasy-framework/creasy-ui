@@ -33,7 +33,7 @@ const Paginator: FunctionComponent<Props> = ({ current, total, onNavigate }) => 
     const pageIdx = i + 1;
     const className = classNames('creasy-paginator__link', pageIdx === current && 'creasy-paginator__link--active');
     buttons.push(
-      <IconButton className={className} onClick={() => onNavigate(pageIdx - 1)}>
+      <IconButton key={pageIdx} className={className} onClick={() => onNavigate(pageIdx - 1)}>
         {pageIdx}
       </IconButton>,
     );

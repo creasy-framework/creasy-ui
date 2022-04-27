@@ -1,0 +1,39 @@
+.creasy-page {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--creasy-palette-storm-10);
+  height: 100vh;
+  width: 100%;
+
+  &__scrollwrapper {
+    display: flex;
+    justify-content: center;
+    flex-grow: 1;
+  }
+
+  &__content {
+    display: flex;
+    justify-content: center;
+    padding: 1.8rem;
+  }
+
+  &__inner {
+    max-width: 76.8rem;
+    flex-grow: 1;
+    flex-direction: column;
+    display: flex;
+    justify-content: center;
+  }
+
+  &__transition-spinner {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: 0;
+    left: 0;
+    z-index: 999;
+    height: 100vh;
+    width: 100%;
+  }
+}

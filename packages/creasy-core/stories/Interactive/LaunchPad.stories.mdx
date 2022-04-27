@@ -21,6 +21,23 @@ import { LaunchPad } from '../../src';
 </div>
 ```
 
+## Placement
+
+```tsx live
+<div style={{height: 300, display: 'flex', justifyContent: 'flex-start', alignItems: 'center'}}>
+  <LaunchPad placement="right" itemPerRow={3} useOverlay={true}>
+    <LaunchPad.Item label="Report"><Icons.Chart/></LaunchPad.Item>
+    <LaunchPad.Item label="Form"><Icons.Form/></LaunchPad.Item>
+    <LaunchPad.Item label="Menu"><Icons.Menu/></LaunchPad.Item>
+    <LaunchPad.Item label="Data"><Icons.DataSource/></LaunchPad.Item>
+    <LaunchPad.Item label="Template"><Icons.Template/></LaunchPad.Item>
+    <LaunchPad.Item label="Question"><Icons.QuestionMark/></LaunchPad.Item>
+    <LaunchPad.Item label="Help"><Icons.Info/></LaunchPad.Item>
+    <LaunchPad.Item label="Power off"><Icons.PowerOff/></LaunchPad.Item>
+  </LaunchPad>
+</div>
+```
+
 ### LaunchPad
 <ArgsTable of={LaunchPad} />
 

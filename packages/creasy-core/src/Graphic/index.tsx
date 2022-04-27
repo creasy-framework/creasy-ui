@@ -1,2 +1,2 @@
 export { default as Icons } from './Icons'
-export { default as Strap } from './Strap/Strap'
+export { default as ColorfulStrap } from './ColorfulStrap/ColorfulStrap'

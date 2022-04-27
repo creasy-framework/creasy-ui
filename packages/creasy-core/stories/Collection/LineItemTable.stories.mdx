@@ -29,27 +29,25 @@ render(() => {
   };
 
   return (
-    <div>
-      <LineItemTable
-        columnsConfig={columnsConfig}
-        data={rowData}
-        onUpdateRow={onUpdateRow}
-      >
-        {(index, data, onChange) => (
-          <LineItemTable.Row columnsConfig={columnsConfig}>
-            <LineItemTable.Item>
-              <Input value={data.name} onChange={(e) => onChange('name', e.target.value)}/>
-            </LineItemTable.Item>
-            <LineItemTable.Item>
-              <Input value={data.team} onChange={(e) => onChange('team', e.target.value)}/>
-            </LineItemTable.Item>
-            <LineItemTable.Item>
-              <DatePicker value={data.date} onChange={(date) => onChange('date', date)}/>
-            </LineItemTable.Item>
-          </LineItemTable.Row>
-        )}
-     </LineItemTable>
-  </div>
+    <LineItemTable
+      columnsConfig={columnsConfig}
+      data={rowData}
+      onUpdateRow={onUpdateRow}
+    >
+      {(index, data, onChange) => (
+        <LineItemTable.Row columnsConfig={columnsConfig}>
+          <LineItemTable.Item>
+            <Input value={data.name} onChange={(e) => onChange('name', e.target.value)}/>
+          </LineItemTable.Item>
+          <LineItemTable.Item>
+            <Input value={data.team} onChange={(e) => onChange('team', e.target.value)}/>
+          </LineItemTable.Item>
+          <LineItemTable.Item>
+            <DatePicker value={data.date} onChange={(date) => onChange('date', date)}/>
+          </LineItemTable.Item>
+        </LineItemTable.Row>
+      )}
+   </LineItemTable>
   );
 })
 ```
@@ -83,28 +81,26 @@ render(() => {
   };
 
   return (
-    <div>
-      <LineItemTable
-        columnsConfig={columnsConfig}
-        data={rowData}
-        onUpdateRow={onUpdateRow}
-        onAddRow={onAddRow}
-      >
-        {(index, data, onChange) => (
-          <LineItemTable.Row columnsConfig={columnsConfig}>
-            <LineItemTable.Item>
-              <Input value={data.name} onChange={(e) => onChange('name', e.target.value)}/>
-            </LineItemTable.Item>
-            <LineItemTable.Item>
-              <Input value={data.team} onChange={(e) => onChange('team', e.target.value)}/>
-            </LineItemTable.Item>
-            <LineItemTable.Item>
-              <DatePicker value={data.date} onChange={(date) => onChange('date', date)}/>
-            </LineItemTable.Item>
-          </LineItemTable.Row>
-        )}
-     </LineItemTable>
-  </div>
+    <LineItemTable
+      columnsConfig={columnsConfig}
+      data={rowData}
+      onUpdateRow={onUpdateRow}
+      onAddRow={onAddRow}
+    >
+      {(index, data, onChange) => (
+        <LineItemTable.Row columnsConfig={columnsConfig}>
+          <LineItemTable.Item>
+            <Input value={data.name} onChange={(e) => onChange('name', e.target.value)}/>
+          </LineItemTable.Item>
+          <LineItemTable.Item>
+            <Input value={data.team} onChange={(e) => onChange('team', e.target.value)}/>
+          </LineItemTable.Item>
+          <LineItemTable.Item>
+            <DatePicker value={data.date} onChange={(date) => onChange('date', date)}/>
+          </LineItemTable.Item>
+        </LineItemTable.Row>
+      )}
+   </LineItemTable>
   );
 })
 ```
@@ -143,29 +139,27 @@ render(() => {
   };
 
   return (
-    <div>
-      <LineItemTable
-        columnsConfig={columnsConfig}
-        data={rowData}
-        onUpdateRow={onUpdateRow}
-        onAddRow={onAddRow}
-        onRemoveRow={onRemoveRow}
-      >
-        {(index, data, onChange) => (
-          <LineItemTable.Row columnsConfig={columnsConfig}>
-            <LineItemTable.Item>
-              <Input value={data.name} onChange={(e) => onChange('name', e.target.value)}/>
-            </LineItemTable.Item>
-            <LineItemTable.Item>
-              <Input value={data.team} onChange={(e) => onChange('team', e.target.value)}/>
-            </LineItemTable.Item>
-            <LineItemTable.Item>
-              <DatePicker value={data.date} onChange={(date) => onChange('date', date)}/>
-            </LineItemTable.Item>
-          </LineItemTable.Row>
-        )}
-     </LineItemTable>
-  </div>
+    <LineItemTable
+      columnsConfig={columnsConfig}
+      data={rowData}
+      onUpdateRow={onUpdateRow}
+      onAddRow={onAddRow}
+      onRemoveRow={onRemoveRow}
+    >
+      {(index, data, onChange) => (
+        <LineItemTable.Row columnsConfig={columnsConfig}>
+          <LineItemTable.Item>
+            <Input value={data.name} onChange={(e) => onChange('name', e.target.value)}/>
+          </LineItemTable.Item>
+          <LineItemTable.Item>
+            <Input value={data.team} onChange={(e) => onChange('team', e.target.value)}/>
+          </LineItemTable.Item>
+          <LineItemTable.Item>
+            <DatePicker value={data.date} onChange={(date) => onChange('date', date)}/>
+          </LineItemTable.Item>
+        </LineItemTable.Row>
+      )}
+   </LineItemTable>
   );
 })
 ```

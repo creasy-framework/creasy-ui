@@ -1,0 +1,130 @@
+import { Meta } from '@storybook/addon-docs';
+import { ArgsTable } from '@storybook/addon-docs';
+import { SimplePage } from '../../src';
+
+<Meta title="Components/Layout/Simple Page" />
+
+## Simple page
+```tsx live expanded
+<SimplePage
+  pageHeader={<h3>Page header</h3>}
+  pageFooter={<h3>Page footer</h3>}
+  primaryContentHeader={<h3>Primary content header</h3>}
+  secondaryContentHeader={<h4>Secondary content header</h4>}
+  contentFooter={<h3>Content footer</h3>}
+>
+    <div style={{height: '60vh'}}>Content</div>
+</SimplePage>
+````
+
+## An example
+
+```tsx live
+render(() => {
+  const [isProcessing, setIsProcessing] = React.useState(true);
+  const [name, setName] = React.useState();
+  const [gender, setGender] = React.useState();
+  const genders = [
+    { value: 'm', label: 'Male' },
+    { value: 'f', label: 'Female' }
+  ];
+  React.useEffect(() => {
+    setTimeout(() => setIsProcessing(false), 3000);
+  }, []);
+  const onSelectGender = (selection) => setGender(selection);
+  const onNameChange = (e) => setName(e.target.value);
+  const data = [
+    { id: '1', name: 'CHENG LI', team: 'Customer Service', date: '2020/02/03' },
+    { id: '2', name: 'SUN WEI', team: 'Customer Service', date: '2020/02/03' },
+    { id: '3', name: 'LIPING ZHAO', team: 'Customer Service', date: '2020/02/03' },
+    { id: '4', name: 'LIPING ZHAO', team: 'Customer Service', date: '2020/02/03' },
+    { id: '5', name: 'LIPING ZHAO', team: 'Customer Service', date: '2020/02/03' },
+    { id: '6', name: 'LIPING ZHAO', team: 'Customer Service', date: '2020/02/03' },
+    { id: '7', name: 'LIPING ZHAO', team: 'Customer Service', date: '2020/02/03' },
+    { id: '8', name: 'LIPING ZHAO', team: 'Customer Service', date: '2020/02/03' },
+    { id: '9', name: 'LIPING ZHAO', team: 'Customer Service', date: '2020/02/03' },
+    { id: '10', name: 'LIPING ZHAO', team: 'Customer Service', date: '2020/02/03' },
+  ];
+
+  const columnsConfig = [
+    { columnName: 'Name' },
+    { columnName: 'Team' },
+    { columnName: 'On boarding date', style: { width: 200 } },
+  ];
+
+  const [rowData, setRowData] = React.useState(data);
+  const onUpdateRow = (index: number, name: string, value: string) => {
+    const updatedRow = { ...rowData[index], [name]: value };
+    const updatedRowData = [...rowData];
+    updatedRowData[index] = updatedRow;
+    setRowData(updatedRowData);
+  };
+  const onAddRow = (newLine: any, name: string, value: any) => {
+    const newRow = { ...newLine, [name]: value };
+    setRowData([...rowData, newRow]);
+  };
+  const onRemoveRow = (index: number) => {
+    const newRowData = rowData.filter((row, i) => i !== index);
+    setRowData(newRowData);
+  };
+
+  return (
+    <SimplePage
+        isProcessing={isProcessing}
+        pageHeader={<ColorfulStrap/>}
+        pageFooter={<ColorfulStrap/>}
+        primaryContentHeader={<h3>Example Page</h3>}
+        contentFooter={
+        <ButtonRow
+          primary={[
+            <Button key="save-btn" color="secondary" size="m">Save</Button>,
+            <Button key="delete-btn" color="danger" size="m">Delete</Button>
+          ]}
+          secondary={[<Button key="cancel-btn"  size="m">Cancel</Button>]}
+        >
+        </ButtonRow>}
+    >
+      <Input
+        label="Name"
+        isRequired
+        labelPlacement="top"
+        size="m"
+        value={name}
+        onChange={onNameChange}
+      />
+      <Select
+        labelPlacement="top"
+        size="xs"
+        clearable={false}
+        options={genders}
+        label="Gender"
+        selectedValue={gender}
+        onChange={onSelectGender}
+      />
+      <LineItemTable
+        columnsConfig={columnsConfig}
+        data={rowData}
+        onUpdateRow={onUpdateRow}
+        onAddRow={onAddRow}
+        onRemoveRow={onRemoveRow}
+      >
+        {(index, data, onChange) => (
+          <LineItemTable.Row columnsConfig={columnsConfig}>
+            <LineItemTable.Item>
+              <Input value={data.name} onChange={(e) => onChange('name', e.target.value)}/>
+            </LineItemTable.Item>
+            <LineItemTable.Item>
+              <Input value={data.team} onChange={(e) => onChange('team', e.target.value)}/>
+            </LineItemTable.Item>
+            <LineItemTable.Item>
+              <DatePicker value={data.date} onChange={(date) => onChange('date', date)}/>
+            </LineItemTable.Item>
+          </LineItemTable.Row>
+        )}
+     </LineItemTable>
+    </SimplePage>
+  );
+})
+```
+
+<ArgsTable of={SimplePage} />

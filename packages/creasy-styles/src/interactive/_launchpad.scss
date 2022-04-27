@@ -52,6 +52,11 @@
   &__label {
     font-weight: 500;
     padding-top: .2rem;
+    font-size: .8rem;
+    max-width: 70px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
     color: var(--creasy-palette-storm-100);
   }
 

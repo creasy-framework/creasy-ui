@@ -5,10 +5,10 @@ interface Props {
   className?: string;
 }
 
-const Strap: FunctionComponent<Props> = ({
+const ColorfulStrap: FunctionComponent<Props> = ({
   className
 }) => (
-  <div className={classNames('creasy-strap', className)}></div>
+  <div className={classNames('creasy-colorful-strap', className)}></div>
 );
 
-export default Strap;
+export default ColorfulStrap;

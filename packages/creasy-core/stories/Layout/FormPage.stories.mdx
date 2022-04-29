@@ -1,25 +1,12 @@
 import { Meta } from '@storybook/addon-docs';
 import { ArgsTable } from '@storybook/addon-docs';
-import { SimplePage } from '../../src';
+import { FormPage } from '../../src';
 
-<Meta title="Components/Layout/Simple Page" />
+<Meta title="Components/Layout/Form Page" />
 
-## Simple page
+## Form page
+
 ```tsx live expanded
-<SimplePage
-  pageHeader={<h3>Page header</h3>}
-  pageFooter={<h3>Page footer</h3>}
-  primaryContentHeader={<h3>Primary content header</h3>}
-  secondaryContentHeader={<h4>Secondary content header</h4>}
-  contentFooter={<h3>Content footer</h3>}
->
-    <div style={{height: '60vh'}}>Content</div>
-</SimplePage>
-````
-
-## An example
-
-```tsx live
 render(() => {
   const [isProcessing, setIsProcessing] = React.useState(true);
   const [name, setName] = React.useState();
@@ -29,7 +16,7 @@ render(() => {
     { value: 'f', label: 'Female' }
   ];
   React.useEffect(() => {
-    setTimeout(() => setIsProcessing(false), 3000);
+    setTimeout(() => setIsProcessing(false), 1500);
   }, []);
   const onSelectGender = (selection) => setGender(selection);
   const onNameChange = (e) => setName(e.target.value);
@@ -69,11 +56,13 @@ render(() => {
   };
 
   return (
-    <SimplePage
+    <FormPage
         isProcessing={isProcessing}
         pageHeader={<ColorfulStrap/>}
         pageFooter={<ColorfulStrap/>}
-        primaryContentHeader={<h3>Example Page</h3>}
+        primaryContentHeader="From FormPage"
+        contentHeaderStickyStyle="scrollUpOnly"
+        contentContainerStyle="card"
         contentFooter={
         <ButtonRow
           primary={[
@@ -122,9 +111,9 @@ render(() => {
           </LineItemTable.Row>
         )}
      </LineItemTable>
-    </SimplePage>
+    </FormPage>
   );
 })
 ```
 
-<ArgsTable of={SimplePage} />
+<ArgsTable of={FormPage} />

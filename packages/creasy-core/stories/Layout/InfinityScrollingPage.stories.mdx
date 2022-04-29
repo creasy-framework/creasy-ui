@@ -1,0 +1,42 @@
+import { Meta } from '@storybook/addon-docs';
+import { ArgsTable } from '@storybook/addon-docs';
+import { InfinityScrollingPage } from '../../src';
+
+<Meta title="Components/Layout/Infinity Scrolling Page" />
+
+## List page expanded
+```tsx live
+render(() => {
+  const TOTAL_ITEMS = 180;
+  const [items, setItems] = React.useState(Array(30).fill(null).map(() => shortid()));
+  const loadMore = () => {
+    setTimeout(() => {
+      setItems([...items, ...Array(30).fill(null).map(() => shortid())]);
+    }, 100);
+  };
+
+  return (
+    <InfinityScrollingPage
+      pageHeader={<ColorfulStrap/>}
+      pageFooter={<ColorfulStrap/>}
+      primaryContentHeader="List FormPage"
+      contentHeaderStickyStyle="scrollUpOnly"
+      contentContainerStyle="card"
+      loadMore={loadMore}
+      hasMore={items.length < TOTAL_ITEMS}
+    >
+      <List>
+        {
+          items.map((key, i) =>  (
+            <List.Item key={key} onClick={close} icon={<Icons.Form/>}>
+              {i}
+            </List.Item>
+          ))
+        }
+      </List>
+    </InfinityScrollingPage>
+  )
+});
+```
+
+<ArgsTable of={InfinityScrollingPage} />

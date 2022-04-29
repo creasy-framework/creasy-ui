@@ -19,7 +19,12 @@ render(() => {
     <InfinityScrollingPage
       pageHeader={<ColorfulStrap/>}
       pageFooter={<ColorfulStrap/>}
-      primaryContentHeader="List FormPage"
+      primaryContentHeader={
+        <div>
+          <h3>Example list page</h3>
+          <Input size="l" left={<Icons.Search />} right={<Button color="primary">Search</Button>} />
+        </div>
+      }
       contentHeaderStickyStyle="scrollUpOnly"
       contentContainerStyle="card"
       loadMore={loadMore}

@@ -1,18 +1,18 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 import toJson from 'enzyme-to-json';
-import SimplePage from '../SimplePage';
+import FormPage from '../FormPage';
 
-describe('SimplePage', () => {
+describe('FormPage', () => {
   const Header = () => <>Header</>;
   const Content = () => <>Content</>;
   const Footer = () => <>Footer</>;
 
   it('should render properly', () => {
     const wrapper = shallow(
-      <SimplePage pageHeader={<Header/>} pageFooter={<Footer/>}>
+      <FormPage pageHeader={<Header/>} pageFooter={<Footer/>}>
         <Content/>
-      </SimplePage>,
+      </FormPage>,
     );
 
     expect(toJson(wrapper)).toMatchSnapshot();

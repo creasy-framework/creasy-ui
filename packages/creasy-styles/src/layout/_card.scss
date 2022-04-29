@@ -9,7 +9,10 @@
   box-sizing: border-box;
 
   &__header {
+    border-top-right-radius: inherit;
+    border-top-left-radius: inherit;
     display: flex;
+    background-color: inherit;
     align-items: center;
     padding: 1.2rem;
     border-bottom: 1px solid var(--creasy-palette-storm-11);
@@ -19,11 +22,15 @@
     padding: 1.2rem;
     flex-grow: 1;
     position: relative;
+    border-radius: 0.4rem;
   }
 
   &__footer {
     border-top: 1px solid var(--creasy-palette-storm-11);
     padding: 1.2rem;
+    border-bottom-right-radius: inherit;
+    border-bottom-left-radius: inherit;
+    background-color: inherit;
   }
 }
 

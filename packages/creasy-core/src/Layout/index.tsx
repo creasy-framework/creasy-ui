@@ -1,2 +1,4 @@
 export { default as Card } from './Card/Card'
-export { default as SimplePage } from './Page/SimplePage'
+export { default as BasePage } from './Page/BasePage'
+export { default as FormPage } from './Page/FormPage'
+export { default as InfinityScrollingPage } from './Page/InfinityScrollingPage'

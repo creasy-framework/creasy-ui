@@ -1,7 +1,7 @@
 import React, { ReactElement, SyntheticEvent, FunctionComponent, Fragment } from 'react';
 import classNames from 'classnames';
 
-import { Card } from '../../Layout';
+import Card from '../../Layout/Card/Card';
 import DrawerHeader from './DrawerHeader';
 
 interface Props {

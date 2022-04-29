@@ -28,9 +28,9 @@ export const parameters = {
         'Getting Started', ['Installation'],
         'Components', [
           'Form', ['Button', 'Button Row', 'Icon Button', 'Input', 'Rich Editor', 'Date Picker', 'Checkbox', 'Toggle', 'Select', 'Auto Complete' ],
-          'Messaging', ['Avater', 'Badge', 'Spinner', 'Balloon', 'Tooltip', 'Page State'],
+          'Messaging', ['Avater', 'Badge', 'Spinner', 'Balloon', 'Tooltip', 'FormPage State'],
           'Collection', ['List', 'Table'],
-          'Layout', ['Card'],
+          'Layout', ['Card', 'Base Page', 'Form Page', 'Infinity Scrolling Page'],
           'Interactive', ['Accordion', 'Drawer', 'Modal', 'Scrollable', 'Infinity Scrolling','Quick Add', 'Launch Pad', 'Dropdown', 'Selectable Tree'],
           'Navigation', ['Menu', 'Paginator'],
           'Graphic']

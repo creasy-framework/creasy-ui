@@ -14,9 +14,17 @@ const CardHeader: CardHeaderComponent = ({
 }) => (
   <div className={`creasy-card-header ${className}`}>
     <span className="creasy-card-header__icon">{icon}</span>
-    <h3 className="creasy-card-header__primary">
-      {primary}
-    </h3>
+    {
+      typeof primary === 'string' ? (
+        <h3 className="creasy-card-header__primary">
+          {primary}
+        </h3>
+      ) : (
+        <div className="creasy-card-header__primary">
+          {primary}
+        </div>
+      )
+    }
     <div className="creasy-card-header__secondary">
       {secondary}
     </div>

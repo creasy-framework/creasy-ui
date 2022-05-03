@@ -1,0 +1,79 @@
+.creasy-train-stops {
+  box-sizing: border-box;
+  overflow: hidden;
+  counter-reset: step;
+  text-align: center;
+  height: auto;
+  width: 150px;
+  @media (min-width: $screen-sm-min) {
+    height: 100px;
+    width: auto;
+  }
+}
+
+.creasy-train-stops-node {
+  list-style-type: none;
+  color: rgb(51, 51, 51);
+  font-size: .7rem;
+  margin: 80px 0px;
+  @media (min-width: $screen-sm-min) {
+    width: 140px;
+    float: left;
+    margin: 0px;
+  }
+  position: relative;
+  cursor: pointer;
+
+  &:hover:before {
+    box-shadow: 0px 3px 1px -2px rgba(0,0,0,0.2), 0px 2px 2px 0px rgba(0,0,0,0.14), 0px 1px 5px 0px rgba(0,0,0,0.12);
+  }
+
+  &:before {
+    content: counter(step);
+    counter-increment: step;
+    width: 23px;
+    line-height: 23px;
+    display: block;
+    font-size: .9rem;
+    color: #333;
+    background: var(--creasy-palette-storm-10);
+    border-radius: 3px;
+    margin: 0 auto 5px auto;
+  }
+
+  &:after {
+    content: '';
+    height: 2px;
+    background: var(--creasy-palette-storm-10);
+    position: absolute;
+    @media (min-width: $screen-sm-min) {
+      left: -50%;
+      height: 2px;
+      width: 140px;
+      top: 9px;
+    }
+    height: 80px;
+    width: 2px;
+    left: 50%;
+    top: -80px;
+    z-index: -1;
+  }
+
+  &:first-child:after {
+    width: 0;
+  }
+
+  &--passed {
+    &:before, &:after {
+      background: var(--creasy-palette-golf);
+      color: white;
+    }
+  }
+
+  &--active {
+    &:before, &:after {
+      background: var(--creasy-palette-dusk-130);
+      color: white;
+    }
+  }
+}

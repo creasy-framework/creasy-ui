@@ -1,8 +1,6 @@
 import React, { FunctionComponent } from 'react';
-import classNames from 'classnames';
 
-interface Props {
-}
+interface Props {}
 
 const TrainStops: FunctionComponent<Props> = ({ children }) => {
   return (

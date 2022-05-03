@@ -1,0 +1,31 @@
+import { Meta } from '@storybook/addon-docs';
+import { ArgsTable } from '@storybook/addon-docs';
+import { Navigator } from '../../src';
+
+<Meta title="Components/Navigation/Navigator" />
+
+## Navigator
+
+> Responsive navigation bar, resize your window to see responsive behaviour
+
+```tsx live expanded
+<div style={{height: 400, backgroundColor: '#F1F1F1'}}>
+    <Navigator
+        brandPart={
+          <div style={{display: 'flex', alignItems: 'center'}}>
+              <Icons.Logo size="m"/>
+              <h3 style={{color: '#2E3E4F', marginLeft: '1rem'}}>Creasy UI</h3>
+          </div>
+        }
+        actionPart={<Button color="primary">Log out</Button>}
+    >
+       <NavigatorMenuItem>HOME</NavigatorMenuItem>
+       <NavigatorMenuItem>TECHNOLOGIES</NavigatorMenuItem>
+       <NavigatorMenuItem>PRODUCTS</NavigatorMenuItem>
+       <NavigatorMenuItem>ABOUT TEAM</NavigatorMenuItem>
+       <NavigatorMenuItem>CONTACT US</NavigatorMenuItem>
+    </Navigator>
+</div>
+```
+
+<ArgsTable of={Navigator} />

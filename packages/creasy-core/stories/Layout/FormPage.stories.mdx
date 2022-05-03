@@ -23,14 +23,6 @@ render(() => {
   const data = [
     { id: '1', name: 'CHENG LI', team: 'Customer Service', date: '2020/02/03' },
     { id: '2', name: 'SUN WEI', team: 'Customer Service', date: '2020/02/03' },
-    { id: '3', name: 'LIPING ZHAO', team: 'Customer Service', date: '2020/02/03' },
-    { id: '4', name: 'LIPING ZHAO', team: 'Customer Service', date: '2020/02/03' },
-    { id: '5', name: 'LIPING ZHAO', team: 'Customer Service', date: '2020/02/03' },
-    { id: '6', name: 'LIPING ZHAO', team: 'Customer Service', date: '2020/02/03' },
-    { id: '7', name: 'LIPING ZHAO', team: 'Customer Service', date: '2020/02/03' },
-    { id: '8', name: 'LIPING ZHAO', team: 'Customer Service', date: '2020/02/03' },
-    { id: '9', name: 'LIPING ZHAO', team: 'Customer Service', date: '2020/02/03' },
-    { id: '10', name: 'LIPING ZHAO', team: 'Customer Service', date: '2020/02/03' },
   ];
 
   const columnsConfig = [
@@ -58,7 +50,25 @@ render(() => {
   return (
     <FormPage
         isProcessing={isProcessing}
-        pageHeader={<ColorfulStrap/>}
+        pageHeader={
+          <Navigator
+              brandPart={
+                <div style={{display: 'flex', alignItems: 'center'}}>
+                    <Icons.Logo size="m"/>
+                    <h3 style={{color: '#2E3E4F', marginLeft: '1rem'}}>Creasy UI</h3>
+                </div>
+              }
+              actionPart={
+                  <Button color="primary">Log out</Button>
+              }
+          >
+             <NavigatorMenuItem>HOME</NavigatorMenuItem>
+             <NavigatorMenuItem>TECHNOLOGIES</NavigatorMenuItem>
+             <NavigatorMenuItem>PRODUCTS</NavigatorMenuItem>
+             <NavigatorMenuItem>ABOUT TEAM</NavigatorMenuItem>
+             <NavigatorMenuItem>CONTACT US</NavigatorMenuItem>
+          </Navigator>
+        }
         pageFooter={<ColorfulStrap/>}
         primaryContentHeader="From FormPage"
         contentHeaderStickyStyle="scrollUpOnly"

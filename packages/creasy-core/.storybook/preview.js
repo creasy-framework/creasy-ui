@@ -30,9 +30,9 @@ export const parameters = {
           'Form', ['Button', 'Button Row', 'Icon Button', 'Input', 'Rich Editor', 'Date Picker', 'Checkbox', 'Toggle', 'Select', 'Auto Complete' ],
           'Messaging', ['Avater', 'Badge', 'Spinner', 'Balloon', 'Tooltip', 'FormPage State'],
           'Collection', ['List', 'Table'],
-          'Layout', ['Card', 'Base Page', 'Form Page', 'Infinity Scrolling Page'],
-          'Interactive', ['Accordion', 'Drawer', 'Modal', 'Scrollable', 'Infinity Scrolling','Quick Add', 'Launch Pad', 'Dropdown', 'Selectable Tree'],
           'Navigation', ['Menu', 'Paginator'],
+          'Interactive', ['Accordion', 'Drawer', 'Modal', 'Scrollable', 'Infinity Scrolling','Quick Add', 'Launch Pad', 'Dropdown', 'Selectable Tree'],
+          'Layout', ['Card', 'Base Page', 'Form Page', 'Infinity Scrolling Page'],
           'Graphic']
       ],
     },

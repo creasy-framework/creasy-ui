@@ -1,6 +1,6 @@
 {
   "name": "@creasy/creasy-core",
-  "version": "1.0.0",
+  "version": "0.0.0",
   "description": "creasy-ui core components library",
   "author": "Cheng Li",
   "license": "MIT",
@@ -8,6 +8,7 @@
   "main": "dist/index.js",
   "module": "dist/index.modern.js",
   "source": "src/index.tsx",
+  "private": false,
   "engines": {
     "node": ">=10"
   },
@@ -50,9 +51,9 @@
     "@types/node": "^12.12.38",
     "@types/rc-tooltip": "^3.7.2",
     "@types/react": "^17.0.2",
-    "@types/react-dom": "^17.0.2",
     "@types/react-content-loader": "^4.0.0",
     "@types/react-custom-scrollbars": "^4.0.6",
+    "@types/react-dom": "^17.0.2",
     "@types/react-infinite-scroller": "^1.2.1",
     "@types/react-modal": "^3.10.5",
     "@types/react-select": "^3.0.11",

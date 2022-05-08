@@ -1,11 +1,11 @@
 {
-  "name": "creasy-ui",
-  "version": "1.0.0",
+  "name": "@creasy/creasy-ui",
+  "version": "0.0.0",
   "main": "index.js",
   "repository": "https://github.com/creasy-framework/creasy-ui",
   "author": "Cheng Li",
   "license": "MIT",
-  "private": true,
+  "private": false,
   "devDependencies": {
     "lerna": "^4.0.0"
   },
@@ -16,7 +16,8 @@
     "bootstrap": "lerna bootstrap",
     "build": "lerna run build",
     "start": "lerna run start --stream",
-    "test": "lerna run test"
+    "test": "lerna run test",
+    "release": "npm config set access public && echo \"//registry.npmjs.org/:_authToken=$NPM_TOKEN\" > ~/.npmrc && lerna publish"
   },
   "overrides": {
     "@types/react": "^17.0.38",

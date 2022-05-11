@@ -22,12 +22,15 @@
     "test:lint:fix": "eslint src/**/*.tsx --fix",
     "test:unit": "cross-env CI=1 react-scripts test --env=jsdom",
     "test:watch": "react-scripts test --env=jsdom",
-    "storybook": "../../node_modules/.bin/start-storybook -p 9009 -s ./.storybook/assets --no-manager-cache"
+    "storybook": "start-storybook -p 9009 -s ./.storybook/assets --no-manager-cache"
   },
   "peerDependencies": {
     "react": "^16.0.0"
   },
   "devDependencies": {
+    "enzyme": "^3.11.0",
+    "enzyme-to-json": "^3.4.4",
+    "@types/enzyme": "^3.10.5",
     "@babel/core": "^7.17.9",
     "@storybook/addon-actions": "^6.4.22",
     "@storybook/addon-docs": "^6.4.22",
@@ -136,5 +139,14 @@
     "snapshotSerializers": [
       "enzyme-to-json/serializer"
     ]
-  }
+  },
+  "resolutions": {
+    "@types/react": "^17.0.2",
+    "@types/react-dom": "^17.0.2"
+  },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  },
+  "gitHead": "ed7bc596751b6984c53b6871d857b03d3ae6a278"
 }

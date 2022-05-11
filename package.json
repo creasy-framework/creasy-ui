@@ -9,22 +9,23 @@
   "devDependencies": {
     "lerna": "^4.0.0"
   },
-  "workspaces": [
+  "packages": [
     "packages/*"
   ],
   "scripts": {
     "bootstrap": "lerna bootstrap",
+    "postinstall": "lerna bootstrap",
     "build": "lerna run build",
     "start": "lerna run start --stream",
     "test": "lerna run test",
     "release": "npm config set access public && echo \"//registry.npmjs.org/:_authToken=$NPM_TOKEN\" > ~/.npmrc && lerna publish"
   },
-  "overrides": {
-    "@types/react": "^17.0.38",
-    "@types/react-dom": "^17.0.38"
-  },
   "resolutions": {
     "@types/react": "^17.0.2",
     "@types/react-dom": "^17.0.2"
+  },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
   }
 }

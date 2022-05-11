@@ -1,5 +1,5 @@
 {
-  "name": "@creasy/creasy-styles",
+  "name": "@creasyui/creasy-styles",
   "version": "0.0.0",
   "main": "dist/index.css",
   "private": false,

@@ -1,6 +1,6 @@
 {
   "name": "@creasyui/creasy-core",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "creasy-ui core components library",
   "author": "Cheng Li",
   "license": "MIT",
@@ -28,9 +28,6 @@
     "react": "^16.0.0"
   },
   "devDependencies": {
-    "enzyme": "^3.11.0",
-    "enzyme-to-json": "^3.4.4",
-    "@types/enzyme": "^3.10.5",
     "@babel/core": "^7.17.9",
     "@storybook/addon-actions": "^6.4.22",
     "@storybook/addon-docs": "^6.4.22",
@@ -49,6 +46,7 @@
     "@types/cleave.js": "^1.4.1",
     "@types/debounce": "^1.2.0",
     "@types/draft-js": "^0.10.29",
+    "@types/enzyme": "^3.10.5",
     "@types/enzyme-adapter-react-16": "^1.0.6",
     "@types/jest": "^25.1.4",
     "@types/node": "^12.12.38",
@@ -70,7 +68,9 @@
     "babel-loader": "^8.2.4",
     "cross-env": "^7.0.2",
     "css-loader": "5.2.7",
+    "enzyme": "^3.11.0",
     "enzyme-adapter-react-16": "^1.15.6",
+    "enzyme-to-json": "^3.4.4",
     "eslint": "^6.8.0",
     "eslint-config-prettier": "^6.7.0",
     "eslint-config-standard": "^14.1.0",

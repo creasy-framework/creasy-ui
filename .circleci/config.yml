@@ -1,6 +1,6 @@
 version: 2
 jobs:
-  test_and_build:
+  test:
     docker:
       - image: cimg/node:16.14.2
     steps:
@@ -11,8 +11,28 @@ jobs:
           command: yarn test
       - run:
           command: yarn build
+  release:
+    docker:
+      - image: cimg/node:16.14.2
+    steps:
+      - checkout
+      - run:
+          command: ./buildtask/release.sh
 workflows:
   version: 2
-  test_and_build:
+  creasy-ui-pipeline:
     jobs:
-      - test_and_build
+      - test
+      - hold:
+          filters:
+            branches:
+              only: master
+          type: approval
+          requires:
+            - test
+      - release:
+          filters:
+            branches:
+              only: master
+          requires:
+            - hold

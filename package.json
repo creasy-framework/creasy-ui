@@ -18,7 +18,7 @@
     "build": "lerna run build",
     "start": "lerna run start --stream",
     "test": "lerna run test",
-    "release": "npm config set access public && echo \"//registry.npmjs.org/:_authToken=$NPM_TOKEN\" > ~/.npmrc && lerna publish"
+    "release": "npm config set access public && echo \"//registry.npmjs.org/:_authToken=$NPM_TOKEN\" > ~/.npmrc && git checkout . && lerna publish patch -y"
   },
   "resolutions": {
     "@types/react": "^17.0.2",

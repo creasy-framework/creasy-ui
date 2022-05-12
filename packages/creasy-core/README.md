@@ -6,14 +6,14 @@
 
 ```bash
 npm install --save @creasyui/creasy-core
-npm install --save @creasyui/creasy-style
+npm install --save @creasyui/creasy-styles
 ```
 
 or
 
 ```bash
 yarn add @creasyui/creasy-core
-yarn add @creasyui/creasy-style
+yarn add @creasyui/creasy-styles
 ```
 
 ## Usage
@@ -22,11 +22,11 @@ yarn add @creasyui/creasy-style
 import React, { Component } from 'react'
 
 import { Button } from '@creasyui/creasy-core'
-import '@creasyui/creasy-style'
+import '@creasyui/creasy-styles'
 
 class Example extends Component {
   render() {
-    return <Button />
+    return <Button>Creasy UI</Button>
   }
 }
 ```

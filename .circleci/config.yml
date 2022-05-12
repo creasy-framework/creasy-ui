@@ -1,4 +1,6 @@
 version: 2
+orbs:
+  aws-cli: circleci/aws-cli@0.1.18
 jobs:
   test:
     docker:
@@ -11,6 +13,13 @@ jobs:
           command: yarn test
       - run:
           command: yarn build
+  deploy:
+    docker:
+      - image: cimg/node:16.14.2
+    steps:
+      - checkout
+      - run:
+          command: ./buildtask/deploy.sh
   release:
     docker:
       - image: cimg/node:16.14.2
@@ -23,13 +32,14 @@ workflows:
   creasy-ui-pipeline:
     jobs:
       - test
+      - deploy
       - hold:
           filters:
             branches:
               only: master
           type: approval
           requires:
-            - test
+            - deploy
       - release:
           filters:
             branches:

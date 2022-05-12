@@ -1,4 +1,6 @@
-version: 2
+version: '2.1'
+orbs:
+  aws-cli: circleci/aws-cli@3.1
 jobs:
   test:
     docker:
@@ -6,30 +8,52 @@ jobs:
     steps:
       - checkout
       - run:
+          name: Installing dependencies
           command: yarn install
       - run:
+          name: Run tests
           command: yarn test
       - run:
+          name: Building project
           command: yarn build
+  deploy:
+    docker:
+      - image: cimg/node:16.14.2
+    executor: aws-cli/default
+    steps:
+      - checkout
+      - aws-cli/setup:
+          profile-name: default
+      - run:
+          name: Deploy storybook to S3
+          command: ./buildtask/deploy.sh
   release:
     docker:
       - image: cimg/node:16.14.2
     steps:
       - checkout
       - run:
+          name: Release to npm
           command: ./buildtask/release.sh
 workflows:
   version: 2
   creasy-ui-pipeline:
     jobs:
       - test
+      - deploy:
+          filters:
+            branches:
+              only: master
+          requires:
+            - test
+          context: aws-context
       - hold:
           filters:
             branches:
               only: master
           type: approval
           requires:
-            - test
+            - deploy
       - release:
           filters:
             branches:

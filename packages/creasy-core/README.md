@@ -1,10 +1,8 @@
-# creasy-core
+# Creasy UI Core Component Library
 
-> creasy-ui core component library
+[![NPM](https://img.shields.io/npm/v/@creasyui/creasy-core.svg)](https://www.npmjs.com/package/@creasyui/creasy-core) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 
-[![NPM](https://img.shields.io/npm/v/creasy-core.svg)](https://www.npmjs.com/package/@creasyui/creasy-core) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
-
-## Install
+## Getting Started
 
 ```bash
 npm install --save @creasyui/creasy-core
@@ -32,6 +30,10 @@ class Example extends Component {
   }
 }
 ```
+
+## Storybook
+
+Look at more examples from [storybook](http://creasyui.furryear.com.s3-website-ap-southeast-2.amazonaws.com/)
 
 ## License
 

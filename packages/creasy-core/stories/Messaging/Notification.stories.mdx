@@ -1,0 +1,92 @@
+import { Meta } from '@storybook/addon-docs';
+import { ArgsTable } from '@storybook/addon-docs';
+import { Notification } from '../../src';
+
+<Meta title="Components/Messaging/Notification" />
+
+## Notification
+
+```tsx live expanded
+render(() => {
+    const [isShow, setIsShow] = React.useState(false);
+    return (
+       <div>
+          <Notification isShow={isShow} type="info" onClose={() => setIsShow(false)} primaryContent="Notification" secondaryContent="You have received a new message"/>
+          {
+              !isShow && <Button color="primary" type="text" size="l" onClick={() => setIsShow(true)}>Show Notification</Button>
+          }
+       </div>
+    )
+}
+```
+
+## Types
+
+```tsx live
+<>
+  <Notification isShow type="info" primaryContent="Notification" secondaryContent="You have received a new message"/>
+  <Notification isShow type="warning" primaryContent="Warning" secondaryContent="Your data is out of date"/>
+  <Notification isShow type="error" primaryContent="Error" secondaryContent="The name field is required"/>
+</>
+```
+
+## Sizes
+
+```tsx live
+<>
+  <Notification isShow size="s" type="info" primaryContent="Notification" secondaryContent="You have received a new message"/>
+  <Notification isShow size="m" type="info" primaryContent="Notification" secondaryContent="You have received a new message"/>
+  <Notification isShow size="l" type="info" primaryContent="Notification" secondaryContent="You have received a new message"/>
+</>
+```
+
+## Placements
+
+```tsx live
+render(() => {
+    const [isShow, setIsShow] = React.useState(false);
+    const [placement, setPlacement] = React.useState('top');
+    const placements = [
+      { value: 'left', label: 'Left' },
+      { value: 'right', label: 'Right' },
+      { value: 'top', label: 'Top' },
+      { value: 'bottom', label: 'Bottom' },
+    ];
+    const onChange = (selection) => {
+        setPlacement(selection);
+    }
+    return (
+       <div style={{height: 200}}>
+          <Select
+            size="m"
+            clearable={false}
+            options={placements}
+            label="Placements"
+            selectedValue={placement}
+            onChange={onChange} />
+          <Button color="primary" type="text" size="l" onClick={() => setIsShow(true)}>Show Notification</Button>
+          <Notification placement={placement} isShow={isShow} type="info" onClose={() => setIsShow(false)} primaryContent="Notification" secondaryContent="You have received a new message"/>
+       </div>
+    )
+}
+```
+
+## Auto dismiss
+
+```tsx live
+render(() => {
+    const [isShow, setIsShow] = React.useState(false);
+    const showNotificationWithAutoDismiss = () => {
+        setIsShow(true);
+        setTimeout(() => setIsShow(false), 1500);
+    }
+    return (
+       <div>
+          <Button color="primary" type="text" size="l" onClick={showNotificationWithAutoDismiss}>Show Notification</Button>
+          <Notification placement="right" isShow={isShow} type="info" primaryContent="Notification" secondaryContent="You have received a new message"/>
+       </div>
+    )
+}
+```
+
+<ArgsTable of={Notification} />

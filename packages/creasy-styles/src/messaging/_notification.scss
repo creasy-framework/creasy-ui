@@ -1,0 +1,121 @@
+.creasy-notification {
+  position: relative;
+  display: flex;
+  align-items: center;
+  opacity: 0;
+  border-radius: .3rem;
+  background: var(--creasy-palette-storm-100);
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.05), 0 5px 15px 0 rgba(0, 0, 0, 0.1);
+  color: #FFFFFF;
+  text-decoration: none;
+  transform: translate3d(0,0,0);
+  max-height: 0;
+  height: 0;
+  transition: max-height 0.4s ease-in-out, opacity 0.2s ease-in-out;
+  overflow: hidden;
+
+  &--show {
+    max-height: 500px;
+    height: auto;
+    padding: 1rem;
+    margin: 1rem 1rem;
+    opacity: 0.8;
+    &:hover {
+      opacity: 1;
+    }
+  }
+
+  &--placement-top, &--placement-bottom {
+    position: fixed;
+    left: 0;
+    right: 0;
+  }
+
+  &--placement-left, &--placement-right {
+    position: fixed;
+    top: 20%;
+  }
+
+  &--placement-top {
+    top: 0;
+  }
+
+  &--placement-bottom {
+    bottom: 0;
+  }
+
+  &--placement-left {
+    left: 0;
+  }
+
+  &--placement-right {
+    right: 0;
+  }
+
+  &__icon {
+    display: flex;
+    margin-right: 10px;
+    align-items: center;
+  }
+
+  &__message {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__primary {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: .9rem;
+    line-height: 1.2rem;
+    font-weight: 700;
+  }
+
+  &__secondary {
+    color: var(--creasy-palette-storm-28);
+    font-size: .8rem;
+    line-height: 1.1rem;
+    margin-top: .1rem;
+  }
+
+  &__close-button {
+    color: var(--creasy-palette-storm-28);
+    cursor: pointer;
+    padding-left: 1rem;
+    &:hover {
+      color: var(--creasy-palette-storm-17);
+    }
+  }
+
+  &--info {
+    .creasy-notification__icon {
+      fill: var(--creasy-palette-golf);
+    }
+  }
+
+  &--error {
+    .creasy-notification__icon {
+      fill: var(--creasy-palette-dusk-140);
+    }
+  }
+
+  &--warning {
+    .creasy-notification__icon {
+      fill: var(--creasy-palette-pineapple);
+    }
+  }
+
+  &--size-s {
+    width: 20rem;
+  }
+
+  &--size-m {
+    width: 30rem;
+  }
+
+  &--size-l {
+    width: 40rem;
+  }
+}

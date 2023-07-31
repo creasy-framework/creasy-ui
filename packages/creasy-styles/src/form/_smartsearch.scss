@@ -1,0 +1,116 @@
+.creasy-smart-search {
+  @media (min-width: $screen-sm-min) {
+    display: flex;
+    align-items: baseline;
+  }
+
+  &__inline-btn {
+    height: 1.6rem;
+    max-width: 6.1rem;
+    padding: 0;
+    font-size: 10px;
+  }
+
+  .creasy-input--type-outlined {
+    min-height: 2.5rem;
+    padding: 0 0.4rem;
+  }
+
+  .creasy-field-group {
+    margin-bottom: 0;
+  }
+
+  &__wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    overflow: auto;
+    width: 100%;
+    min-height: 2.5rem;
+    align-items: center;
+  }
+
+  &__input {
+    min-width: 5rem;
+    flex: 1;
+  }
+
+  &__popover {
+    .rc-tooltip-inner {
+      background-color: white;
+      color: var(--creasy-palette-color-text-darker);
+    }
+  }
+
+  .creasy-tooltip__trigger {
+    flex: 1;
+  }
+
+  &__right {
+    display: none;
+    @media (min-width: $screen-sm-min) {
+      display: flex;
+    }
+  }
+
+  &__bottom {
+    display: block;
+    .creasy-button {
+      margin: .4rem 0;
+    }
+
+    @media (min-width: $screen-sm-min) {
+      display: none;
+    }
+  }
+}
+
+.creasy-tooltip__overlay.creasy-smart-search__popover {
+  opacity: 1;
+  padding: 0;
+}
+
+.creasy-filter-chip {
+  &__close-btn {
+    cursor: pointer;
+    &:hover {
+      > g {
+        fill: var(--creasy-palette-dusk-72);
+      }
+    }
+  }
+
+  &__badge {
+    max-width: 5rem;
+    box-sizing: border-box;
+    cursor: pointer;
+    border-radius: 0.2rem;
+    transition: max-width 0.5s ease;
+    background-color: var(--creasy-palette-dusk-60);
+    color: var(--creasy-palette-dusk-dark);
+    &:hover {
+      max-width: 30rem;
+      background-color: var(--creasy-palette-dusk-50);
+    }
+  }
+}
+
+.creasy-smart-search-filters {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem 0;
+  @media (min-width: $screen-sm-min) {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  &__filter {
+    margin-bottom: 1rem;
+    @media (min-width: $screen-sm-min) {
+      flex-basis: 49%;
+      margin-bottom: 0rem;
+    }
+    .creasy-field-group__label {
+      padding-bottom: .2rem;
+    }
+  }
+}

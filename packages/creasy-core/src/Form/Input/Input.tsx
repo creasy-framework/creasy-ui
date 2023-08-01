@@ -23,6 +23,7 @@ interface Props {
   left?: ReactElement;
   right?: ReactElement;
   className?: string;
+  renderInput?: (inputProps: any) => ReactElement;
 }
 
 class Input extends React.Component<Props> {
@@ -64,6 +65,7 @@ class Input extends React.Component<Props> {
       right,
       className,
       value = '',
+      renderInput,
       ...otherProps
     } = this.props;
 
@@ -105,7 +107,9 @@ class Input extends React.Component<Props> {
           {
             left && <span className="creasy-input__left">{left}</span>
           }
-          {inputView}
+          {
+            renderInput ? renderInput(inputProps) : inputView
+          }
           {
             right && <span className="creasy-input__right">{right}</span>
           }

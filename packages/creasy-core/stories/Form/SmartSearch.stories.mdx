@@ -1,0 +1,53 @@
+import { Meta } from '@storybook/addon-docs';
+import { ArgsTable } from '@storybook/addon-docs';
+import { SmartSearch } from '../../src';
+
+<Meta title="Components/Form/Smart Search" />
+
+## Simple keyword search
+```tsx live expanded
+render(() => {
+  return (
+    <div>
+        <SmartSearch/>
+    </div>
+  );
+})
+```
+
+## With filters
+
+```tsx live
+render(() => {
+  const [pinnedFilters, setPinnedFilters] = React.useState<string[]>([]);
+  const handlePinFilter = (filterBy, state) => {
+      if (state) {
+          setPinnedFilters([...pinnedFilters, filterBy]);
+      } else {
+          setPinnedFilters(pinnedFilters.filter(f => f !== filterBy));
+      }
+  }
+  const filters = [
+      { label: 'Color', enablePin: true, filterBy: 'color', type: 'SINGLE_SELECT', options: [
+          { value: 'r', label: 'Red' },
+          { value: 'g', label: 'Green' },
+          { value: 'b', label: 'Blue' },
+      ]},
+      { label: 'Gender', enablePin: true, filterBy: 'gender', type: 'SINGLE_SELECT', options: [
+          { value: 'm', label: 'Male' },
+          { value: 'f', label: 'Female' },
+      ]},
+      { label: 'Role', enablePin: true, filterBy: 'team', type: 'SINGLE_SELECT', options: [
+          { value: 'admin', label: 'Admin' },
+          { value: 'viewer', label: 'Viewer' },
+      ]}
+  ];
+  return (
+    <div>
+        <SmartSearch filters={filters} pinnedFilters={pinnedFilters} onPinFilter={handlePinFilter}/>
+    </div>
+  );
+})
+```
+
+<ArgsTable of={SmartSearch} />

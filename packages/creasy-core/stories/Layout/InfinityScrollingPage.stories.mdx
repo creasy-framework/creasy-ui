@@ -7,6 +7,29 @@ import { InfinityScrollingPage } from '../../src';
 ## List page
 ```tsx live expanded
 render(() => {
+  const [pinnedFilters, setPinnedFilters] = React.useState<string[]>([]);
+  const handlePinFilter = (filterBy, state) => {
+      if (state) {
+          setPinnedFilters([...pinnedFilters, filterBy]);
+      } else {
+          setPinnedFilters(pinnedFilters.filter(f => f !== filterBy));
+      }
+  }
+  const filters = [
+      { label: 'Color', enablePin: true, filterBy: 'color', type: 'SINGLE_SELECT', options: [
+          { value: 'r', label: 'Red' },
+          { value: 'g', label: 'Green' },
+          { value: 'b', label: 'Blue' },
+      ]},
+      { label: 'Gender', enablePin: true, filterBy: 'gender', type: 'SINGLE_SELECT', options: [
+          { value: 'm', label: 'Male' },
+          { value: 'f', label: 'Female' },
+      ]},
+      { label: 'Role', enablePin: true, filterBy: 'team', type: 'SINGLE_SELECT', options: [
+          { value: 'admin', label: 'Admin' },
+          { value: 'viewer', label: 'Viewer' },
+      ]}
+  ];
   const TOTAL_ITEMS = 180;
   const [items, setItems] = React.useState(Array(30).fill(null).map(() => shortid()));
   const loadMore = () => {
@@ -38,9 +61,9 @@ render(() => {
       }
       pageFooter={<ColorfulStrap/>}
       primaryContentHeader={
-        <div>
+        <div style={{width: '100%'}}>
           <h3>Example list page</h3>
-          <Input size="l" left={<Icons.Search />} right={<Button color="primary">Search</Button>} />
+          <SmartSearch filters={filters} pinnedFilters={pinnedFilters} onPinFilter={handlePinFilter}/>
         </div>
       }
       contentHeaderStickyStyle="scrollUpOnly"

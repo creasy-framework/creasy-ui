@@ -5,6 +5,7 @@ exports[`Tooltip should render for default props 1`] = `
   overlay="This is tooltip"
   overlayClassName="creasy-tooltip__overlay"
   placement="left"
+  showArrow={true}
   trigger={
     Array [
       "hover",

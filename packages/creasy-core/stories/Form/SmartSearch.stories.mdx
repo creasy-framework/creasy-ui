@@ -19,24 +19,32 @@ render(() => {
 
 ```tsx live
 render(() => {
+  const [pinnedFilters, setPinnedFilters] = React.useState<string[]>([]);
+  const handlePinFilter = (filterBy, state) => {
+      if (state) {
+          setPinnedFilters([...pinnedFilters, filterBy]);
+      } else {
+          setPinnedFilters(pinnedFilters.filter(f => f !== filterBy));
+      }
+  }
   const filters = [
-      { label: 'Color', filterBy: 'color', type: 'SINGLE_SELECT', options: [
+      { label: 'Color', enablePin: true, filterBy: 'color', type: 'SINGLE_SELECT', options: [
           { value: 'r', label: 'Red' },
           { value: 'g', label: 'Green' },
           { value: 'b', label: 'Blue' },
       ]},
-      { label: 'Gender', filterBy: 'gender', type: 'SINGLE_SELECT', options: [
+      { label: 'Gender', enablePin: true, filterBy: 'gender', type: 'SINGLE_SELECT', options: [
           { value: 'm', label: 'Male' },
           { value: 'f', label: 'Female' },
       ]},
-      { label: 'Role', filterBy: 'team', type: 'SINGLE_SELECT', options: [
+      { label: 'Role', enablePin: true, filterBy: 'team', type: 'SINGLE_SELECT', options: [
           { value: 'admin', label: 'Admin' },
           { value: 'viewer', label: 'Viewer' },
       ]}
   ];
   return (
     <div>
-        <SmartSearch filters={filters}/>
+        <SmartSearch filters={filters} pinnedFilters={pinnedFilters} onPinFilter={handlePinFilter}/>
     </div>
   );
 })

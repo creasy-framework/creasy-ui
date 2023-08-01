@@ -1,9 +1,4 @@
 .creasy-smart-search {
-  @media (min-width: $screen-sm-min) {
-    display: flex;
-    align-items: baseline;
-  }
-
   &__inline-btn {
     height: 1.6rem;
     max-width: 6.1rem;
@@ -36,13 +31,14 @@
 
   &__popover {
     .rc-tooltip-inner {
+      min-width: 15rem;
       background-color: white;
       color: var(--creasy-palette-color-text-darker);
     }
   }
 
   .creasy-tooltip__trigger {
-    flex: 1;
+    //flex: 1;
   }
 
   &__right {
@@ -62,6 +58,41 @@
       display: none;
     }
   }
+
+  &__inline-filter {
+    max-width: 5rem;
+    transition: max-width 0.5s ease;
+    background-color: var(--creasy-palette-dusk-60);
+    color: var(--creasy-palette-dusk-dark);
+    &:hover {
+      max-width: 30rem;
+    }
+  }
+
+  &__pinned-filter {
+    padding: .2rem 0.1rem;
+  }
+
+  &__pinned-filters {
+    display: block;
+    &--large {
+      display: none;
+    }
+    @media (min-width: $screen-sm-min) {
+      display: none;
+      &--large {
+        @media (min-width: $screen-sm-min) {
+          display: block;
+        }
+      }
+    }
+  }
+}
+
+.creasy-smart-search-pins {
+  display: flex;
+  flex-wrap: wrap;
+  padding: .5rem 0;
 }
 
 .creasy-tooltip__overlay.creasy-smart-search__popover {
@@ -80,17 +111,9 @@
   }
 
   &__badge {
-    max-width: 5rem;
     box-sizing: border-box;
     cursor: pointer;
     border-radius: 0.2rem;
-    transition: max-width 0.5s ease;
-    background-color: var(--creasy-palette-dusk-60);
-    color: var(--creasy-palette-dusk-dark);
-    &:hover {
-      max-width: 30rem;
-      background-color: var(--creasy-palette-dusk-50);
-    }
   }
 }
 
@@ -103,7 +126,9 @@
     flex-wrap: wrap;
   }
 
-  &__filter {
+  &__filter-wrapper {
+    display: flex;
+    align-items: flex-end;
     margin-bottom: 1rem;
     @media (min-width: $screen-sm-min) {
       flex-basis: 49%;
@@ -112,5 +137,24 @@
     .creasy-field-group__label {
       padding-bottom: .2rem;
     }
+    .creasy-field-group {
+      padding-right: 0;
+    }
+    &:hover {
+      .creasy-smart-search-filters__filter-pin {
+        visibility: visible;
+      }
+    }
+  }
+
+  &__filter {
+    flex: 1;
+  }
+
+  &__filter-pin {
+    @media (min-width: $screen-sm-min) {
+      margin-bottom: .7rem;
+    }
+    visibility: hidden;
   }
 }

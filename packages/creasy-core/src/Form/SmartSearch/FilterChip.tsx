@@ -2,6 +2,7 @@ import * as React from 'react';
 import { FunctionComponent } from 'react';
 import { Badge } from '../../Messaging';
 import Icons from '../../Graphic/Icons';
+import classNames from 'classnames';
 
 export enum FilterType {
   KEYWORD = 'KEYWORD',
@@ -13,6 +14,7 @@ export interface Filter {
   filterBy: string;
   type: FilterType;
   options?: any[];
+  enablePin?: boolean;
 }
 
 export interface AppliedFilter extends Filter {
@@ -22,20 +24,25 @@ export interface AppliedFilter extends Filter {
 
 interface Props {
   onClose?: () => void;
-  filter: AppliedFilter
+  className?: string;
+  filter: Filter | AppliedFilter;
 }
 
 const FilterChip: FunctionComponent<Props> = ({
   onClose,
   filter,
+  children,
+  className
 }) => {
   return (
-    <div className="creasy-filter-chip">
-      <Badge className="creasy-filter-chip__badge" color="primary" right={
-        <span onClick={onClose}>
-          <Icons.Close className="creasy-filter-chip__close-btn"/>
-        </span>
-      }>{filter.valueLabel}</Badge>
+    <div id={filter.filterBy} className="creasy-filter-chip">
+      <Badge className={classNames('creasy-filter-chip__badge', className)} right={
+          onClose && (
+          <span onClick={onClose}>
+            <Icons.Close className="creasy-filter-chip__close-btn"/>
+          </span>
+        )
+      }>{children}</Badge>
     </div>
   )
 };

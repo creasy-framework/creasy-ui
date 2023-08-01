@@ -5,6 +5,10 @@ import classNames from 'classnames';
 
 type ActionType = 'hover' | 'focus' | 'click' | 'contextMenu';
 
+interface AlignType {
+  points: string[];
+};
+
 interface Props {
   placement?: 'left' | 'right' | 'top' | 'bottom';
   content?: React.ReactNode;
@@ -14,6 +18,7 @@ interface Props {
   showArrow?: boolean;
   visible?: boolean;
   overlayStyle?: React.CSSProperties;
+  align?: AlignType;
 }
 
 const Tooltip: FunctionComponent<Props> = ({
@@ -28,25 +33,30 @@ const Tooltip: FunctionComponent<Props> = ({
  ],
  showArrow = true,
  className,
- visible,
+ visible = undefined,
  overlayStyle,
-}) => (
-  content ? (
-    <ReactTooltip
-      onVisibleChange={onVisibleChange}
-      placement={placement}
-      overlay={content as any} // need to fix this
-      overlayClassName={classNames('creasy-tooltip__overlay', className)}
-      showArrow={showArrow}
-      trigger={triggers}
-      visible={visible}
-      overlayStyle={overlayStyle}
-    >
+ align,
+}) => {
+  const otherProps = visible === undefined ? {} : { visible };
+  return (
+    content ? (
+      <ReactTooltip
+        onVisibleChange={onVisibleChange}
+        placement={placement}
+        overlay={content as any} // need to fix this
+        overlayClassName={classNames('creasy-tooltip__overlay', className)}
+        showArrow={showArrow}
+        trigger={triggers}
+        overlayStyle={overlayStyle}
+        align={align}
+        {...otherProps}
+      >
     <span className="creasy-tooltip__trigger">
      {children}
     </span>
-    </ReactTooltip>
-  ) : <React.Fragment>{children}</React.Fragment>
-);
+      </ReactTooltip>
+    ) : <React.Fragment>{children}</React.Fragment>
+  );
+}
 
 export default Tooltip;

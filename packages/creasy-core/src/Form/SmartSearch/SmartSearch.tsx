@@ -6,15 +6,18 @@ import Button from '../Button/Button';
 import Tooltip from '../../Messaging/Tooltip/Tooltip';
 import Filters from './Filters';
 import Drawer from '../../Interactive/Drawer/Drawer';
+import PinnedFilters from "./PinnedFilters";
 
 interface Props {
   size?: 'xs' | 's' | 'm' | 'l' | 'xl';
   onSearch?: (filters: AppliedFilter[]) => void;
+  onPinFilter?: (filterBy: string, state: boolean) => void;
   searchButtonText?: string;
   keywordText?: string;
   placeholder?: string;
   filterButtonText?: string;
-  filters: Filter[];
+  filters?: Filter[];
+  pinnedFilters?: string[];
 }
 
 const SmartSearch: FunctionComponent<Props> = (props) => {
@@ -30,6 +33,8 @@ const SmartSearch: FunctionComponent<Props> = (props) => {
     keywordText = 'Keyword',
     filterButtonText = 'More Filters',
     filters = [],
+    pinnedFilters = [],
+    onPinFilter,
     ...otherProps
   } = props;
 
@@ -101,7 +106,13 @@ const SmartSearch: FunctionComponent<Props> = (props) => {
         visible={filterDropdownWidth > 0}
         showArrow={false}
         triggers={[]}
-        content={<Filters filters={filters} appliedFilters={appliedFilters} onApplyFilter={handleApplyFilters}/>}
+        content={<Filters
+          filters={filters}
+          appliedFilters={appliedFilters}
+          pinnedFilters={pinnedFilters}
+          onApplyFilter={handleApplyFilters}
+          onPinFilter={onPinFilter}
+        />}
         overlayStyle={{width: filterDropdownWidth}}
       >
         <Input {...otherProps} right={
@@ -123,13 +134,23 @@ const SmartSearch: FunctionComponent<Props> = (props) => {
           <div className="creasy-smart-search__wrapper">
             {
               appliedFilters.map((filter, i) =>
-                <FilterChip key={`${filter.type}_${filter.value}_${i}`} filter={filter} onClose={() => handleDeleteAppliedFilter(i)}/>)
+                <FilterChip
+                  className="creasy-smart-search__inline-filter"
+                  key={`${filter.type}_${filter.value}_${i}`}
+                  filter={filter}
+                  onClose={() => handleDeleteAppliedFilter(i)}
+                >
+                  {filter.valueLabel}
+                </FilterChip>  )
             }
             <span className="creasy-smart-search__input">
               <input {...inputProps} placeholder={placeholder} value={keyword} onKeyDown={handleKeyDown} onChange={handleKeywordChange}/>
             </span>
           </div>
         )}/>
+        <div className="creasy-smart-search__pinned-filters">
+          <PinnedFilters filters={filters} appliedFilters={appliedFilters} pinnedFilters={pinnedFilters} onApplyFilter={handleApplyFilters}/>
+        </div>
         <div className="creasy-smart-search__bottom">
           <Button onClick={handleSearch} color="primary">
             {searchButtonText}
@@ -144,10 +165,18 @@ const SmartSearch: FunctionComponent<Props> = (props) => {
         </div>
       </Tooltip>
       <Drawer header={<h3>{filterButtonText}</h3>} isShow={showDrawer} onClose={() => setShowDrawer(false)}>
-        <Filters filters={filters} appliedFilters={appliedFilters} onApplyFilter={handleApplyFilters}/>
+        <Filters
+          filters={filters}
+          appliedFilters={appliedFilters}
+          pinnedFilters={pinnedFilters}
+          onApplyFilter={handleApplyFilters}
+          onPinFilter={onPinFilter}
+        />
       </Drawer>
+      <div className="creasy-smart-search__pinned-filters creasy-smart-search__pinned-filters--large">
+        <PinnedFilters filters={filters} appliedFilters={appliedFilters} pinnedFilters={pinnedFilters} onApplyFilter={handleApplyFilters}/>
+      </div>
     </div>
-
   )
 };
 

@@ -81,6 +81,8 @@ import CSV from './CSV';
 import Formula from './Formula';
 import Mapping from './Mapping';
 import Warning from './Warning';
+import Pin from './Pin';
+import Unpin from './Unpin';
 
 const Icons = {
   Add,
@@ -164,6 +166,8 @@ const Icons = {
   Formula,
   Mapping,
   Warning,
+  Pin,
+  Unpin,
 };
 
 interface IconProps {
